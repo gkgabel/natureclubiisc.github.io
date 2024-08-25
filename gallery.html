@@ -1,11 +1,17 @@
 ---
 layout: page
 title: Photo Sets
-description: "ENTER HERE"
+description: "Gallery for Photo sets"
 ---
 <ul>
   {% comment %}
     Get all "photo_set" pages and display a list with links to them.
+    Please don't change anything here.
+    To add a new photo set:
+    1. Create a new html file example_name.html in this same directory. berlin.html here is one such example.
+    2. Copy the contents similar to berlin.html. There size argument tells the number of photos to display
+    3. Now go to directory images/photos and put the photos to be displayed and name them as example_name_1,..example_name_n
+    You will be able to see your new photo set listed once you refresh the page
   {% endcomment %}
   {% assign photo_pages = site.pages | where: "layout", "photo_set" %}
   {% for photo_page in photo_pages %}
