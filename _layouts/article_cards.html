@@ -1,0 +1,52 @@
+---
+layout: article
+header: true
+---
+<style>
+    .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+}
+
+.event-card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.event-card p {
+    color: #666;
+}
+
+.event-card span {
+    color: #999;
+}
+</style>
+
+{{ content }}
