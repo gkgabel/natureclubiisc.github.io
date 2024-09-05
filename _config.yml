@@ -223,3 +223,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
+
+collections:
+  events:
+    output: true

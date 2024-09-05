@@ -1,0 +1,25 @@
+1.Adding New Events
+To add a new event to the website, you need to create a new markdown file in the _events directory at the root of the project. The name of the file should match the link field you want for your event. For example, for an event with link: 'event1.html', create a file named event1.md.
+
+Here's the structure of an event markdown file:(excluding ```)
+
+```
+---
+layout: article 
+title: "Event Title"
+one_line_detail: "Short description of the event"
+date: "YYYY-MM-DD"
+---
+
+Additional content for the event.
+
+```
+
+Here's what each field represents:
+
+layout: The layout to use for the event page. This should usually be default, unless you have created a custom layout for your event pages.
+title: The title of the event. This will be displayed as the heading of the event card on the website.
+one_line_detail: A short description or summary of the event. This will be displayed on the event card under the title.
+date: The date of the event, in the format YYYY-MM-DD.
+The content below the front matter (front matter is the part between the --- lines) will be the main content of the event page.
+
