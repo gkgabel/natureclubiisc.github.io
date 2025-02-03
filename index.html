@@ -1,129 +1,27 @@
 ---
 layout: landing
-header: true
-#mode: immersive
-title: Home
-show_title: false
+title: Nature Club IISc Bangalore
+mode: immersive
+header: false
+show_title: true
+sidebar: false
+excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+data:
+  sections:
+    - title: "Section 1"
+      content: "Content for section 1."
+      theme: light
+      background_color: '#129'
+      background_image:
+        src: images/vecteezy_blue-mountain-landscape-background-illustration_7692868.jpg
+    - title: "Section 2"
+      content: "Content for section 2."
 article_header:
-  type: cover
-  align: center
-  height: 100vh
+  type: overlay
+  theme: dark
+  background_color: '#123'
+  background_image:
+    src: images/vecteezy_blue-mountain-landscape-background-illustration_7692868.jpg
 ---
-<style> 
-
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 500px; /* Set your desired constant height here */
-    overflow: hidden;
-    display: inline-block; /* Make sure it behaves like an inline element */
-    vertical-align: top; /* Align with other inline elements if necessary */
-}
-
-.carousel-inner {
-    display: flex;
-    width: 100%;
-    height: 100%; /* Ensure inner items fill the carousel height */
-    transition: transform 0.5s ease;
-}
-
-.carousel-item {
-    min-width: 100%;
-    height: 100%; /* Ensure items fill the carousel height */
-    transition: opacity 0.5s ease;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Crop the image to fit the container */
-    display: block;
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 100;
-}
-
-.carousel-control.prev {
-    left: 10px;
-}
-
-.carousel-control.next {
-    right: 10px;
-}
-</style>
-    
-    <script>
-    
-    let currentSlide = 0;
-    const slideInterval = 3000; // Interval time in milliseconds
-    let slides;
-    
-    // Function to show the current slide
-    function showSlide(index) {
-        if (!slides) {
-            slides = document.querySelectorAll('.carousel-item');
-        }
-        if (index >= slides.length) currentSlide = 0;
-        if (index < 0) currentSlide = slides.length - 1;
-        slides.forEach((slide, i) => {
-            slide.style.opacity = i === currentSlide ? '1' : '0';
-        });
-        document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-    
-    // Function to go to the next slide
-    function nextSlide() {
-        currentSlide++;
-        showSlide(currentSlide);
-    }
-    
-    // Function to go to the previous slide
-    function prevSlide() {
-        currentSlide--;
-        showSlide(currentSlide);
-    }
-    
-    // Function to start the autoplay
-    function startAutoplay() {
-        setInterval(nextSlide, slideInterval);
-    }
-    
-    // Initialize the first slide and start autoplay
-    document.addEventListener("DOMContentLoaded", function() {
-        slides = document.querySelectorAll('.carousel-item');
-        showSlide(currentSlide);
-        startAutoplay();
-    });
-</script>
-    
-    <div class="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/common-hawk-cuckoo-at-vedanthangal-bird-sanctuary-tamil-v0-s2ba4z6u0x8d1.jpeg.webp" alt="Image 1">
-            </div>
-            <div class="carousel-item">
-                <img src="images/just-some-shots-i-took-after-work-this-morning-v0-z0ytnvdszr8d1.jpg.webp" alt="Image 2">
-            </div>
-            <div class="carousel-item">
-                <img src="images/OjWDyXZXGOnNeFpT_51j2mtq1IxyPL_4Ts9f-uZtNPk.jpg.webp" alt="Image 3">
-            </div>
-        </div>
-        <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
-        <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
-    </div>
-    
-<div class="article__content">
-  IISc Nature Club
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non neque vitae tellus eleifend hendrerit. Quisque ultricies pellentesque dui, id tristique eros suscipit eget. Suspendisse pretium metus ut imperdiet suscipit. Curabitur quis mauris nec mauris auctor lacinia. Ut vestibulum quam vitae mi placerat elementum. Proin non ligula ex. Phasellus maximus, nulla nec tempus gravida, nulla urna pulvinar leo, eu vestibulum justo sem eget mi. Sed ut tortor in nulla iaculis tincidunt. Pellentesque congue purus in lorem rhoncus, sed bibendum nunc molestie. Donec eros ex, mollis a lectus vitae, tincidunt mattis metus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi semper vitae nulla quis venenatis. Maecenas in nisl eget nibh consectetur vulputate. Suspendisse justo mauris, vehicula quis rhoncus ac, pellentesque non nulla. Duis nulla ex, blandit id laoreet et, suscipit eu turpis.
-
-Suspendisse potenti. Nam eu volutpat odio. Nullam dictum dapibus tristique. Fusce suscipit, nibh vitae tincidunt ultrices, leo mi vestibulum ex, sed molestie tellus neque sit amet eros. Nam vel lobortis odio. In porta lacus libero, commodo lobortis purus hendrerit eu. Duis volutpat nunc non libero rhoncus mollis. Etiam turpis massa, fringilla et molestie ac, varius eu nunc. Cras sit amet ultrices ante. Morbi et ipsum sit amet tortor hendrerit aliquet vel nec urna. Fusce maximus leo a faucibus molestie. Morbi nec congue mi. Aliquam erat volutpat. Nulla et dapibus urna, vitae dignissim erat. Cras ac est venenatis, dictum libero sed, consectetur nisl. Vivamus porttitor iaculis molestie.
-</div>
+<h1>{{ layout.title }}</h1>
+<h1>{{ page.title }}</h1>
