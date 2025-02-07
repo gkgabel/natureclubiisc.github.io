@@ -2,26 +2,83 @@
 layout: landing
 title: Nature Club IISc Bangalore
 mode: immersive
-header: false
+header: true
 show_title: true
-sidebar: false
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-data:
-  sections:
-    - title: "Section 1"
-      content: "Content for section 1."
-      theme: light
-      background_color: '#129'
-      background_image:
-        src: images/vecteezy_blue-mountain-landscape-background-illustration_7692868.jpg
-    - title: "Section 2"
-      content: "Content for section 2."
 article_header:
   type: overlay
   theme: dark
+  height: 90vh
   background_color: '#123'
   background_image:
     src: images/vecteezy_blue-mountain-landscape-background-illustration_7692868.jpg
 ---
-<h1>{{ layout.title }}</h1>
-<h1>{{ page.title }}</h1>
+<div class="grid-container">
+  <div class="grid grid--p3">
+    <div class="cell--12 cell--lg-3 ml-auto mr-auto">
+      <div class="card ml-auto mr-auto mt-2 mb-2" style="text-align: center;" >
+        <div class="card__content" >
+          <h5>WELCOME</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div> 
+        <div class="card__image">
+          <img class="image" src="images/people-8559416_1280.png"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="cell--12 cell--lg-6">
+      <div class="grid">
+      <div class="cell--12 cell--lg-6 ml-auto mr-auto">
+        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: ivory;" onclick="window.location.href='{{ event.url }}'">
+          <div class="card__content">
+            <h2 class="card__header" >Events</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="cell--12 cell--lg-6 ml-auto mr-auto">
+        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: ivory;" onclick="window.location.href='{{ event.url }}'">
+          <div class="card__content">
+              <h2 class="card__header">Archive</h2>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cell--12 cell--lg-6 ml-auto mr-auto">
+        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: ivory;" onclick="window.location.href='{{ event.url }}'">
+          <div class="card__content">
+            <h2 class="card__header">Team</h2>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cell--12 cell--lg-6 ml-auto mr-auto">
+        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: ivory;" onclick="window.location.href='{{ event.url }}'">
+          <div class="card__content">
+              <h2 class="card__header">Resources</h2>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  <div class="cell--12 cell--lg-3">    
+    <div class="card ml-auto mr-auto mt-2 mb-2" style="text-align: center;" >
+      <div class="card__content" >
+        <h3>Picture of the Week</h3>
+        <div class="card__image">
+          <img class="image" src="images/just-some-shots-i-took-after-work-this-morning-v0-z0ytnvdszr8d1.jpg.webp"/>
+          <p> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div> 
+    </div>
+
+    <div class="card ml-auto mr-auto mt-auto mb-4" style="text-align: center;" >
+      <div class="card__content" >
+        <h5 class = "card__header"> Join us </h5>
+      </div> 
+    </div>
+  </div>  
+</div>

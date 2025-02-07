@@ -1,11 +1,12 @@
 ---
 layout: article
 title: "Upcoming"
+full_width: false
 ---
 <div class="grid-container">
     <div class="grid">
         {% for event in site.events %}
-        <div class="cell--md-6">
+        <div class="cell--md-6 cell--lg-6">
             <div class="card card--clickable mt-4 mb-4 ml-4 mr-4" onclick="window.location.href='{{ event.url }}'">
                 <div class="card__content">
                     <h2 class="card__header">{{ event.title }}</h2>
