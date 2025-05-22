@@ -12,10 +12,15 @@ article_header:
   background_image:
     src: images/vecteezy_blue-mountain-landscape-background-illustration_7692868.jpg
 ---
-<div class="grid-container">
+<div class="hero hero--center hero--dark" style="height: 10vh;">
+      <a class="button button--outline-theme-light button--pill ml-auto mr-auto" style="width: 30%;" href="#main-content">Discover More</a>
+</div>
+
+
+<div id="main-content" class="grid-container">
   <div class="grid grid--p3">
     <div class="cell--12 cell--lg-3 ml-auto mr-auto">
-      <div class="card ml-auto mr-auto mt-2 mb-2" style="text-align: center;" >
+      <div class="card ml-auto mr-auto mt-2 mb-2" style="text-align: center" >
         <div class="card__content" >
           <h5>WELCOME</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -26,36 +31,48 @@ article_header:
       </div>
     </div>
 
-    <div class="cell--12 cell--lg-6">
+    <div class="cell--12 cell--lg-6 mt-4">
       <div class="grid">
       <div class="cell--12 cell--lg-6 ml-auto mr-auto">
-        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: ivory;" onclick="window.location.href='{{ event.url }}'">
-          <div class="card__content">
-            <h2 class="card__header" >Events</h2>
+        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: #e6f3e6; text-align: center" onclick="window.location.href='{{ event.url }}'">
+          <div class="card__image">
+            <img class="image" style="object-fit: cover; aspect-ratio: 16 / 9;" src="images/placeholder-events.jpg"/>
+            <div class="overlay overlay--bottom">
+              <h3 class="card__header">Events</h3>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="cell--12 cell--lg-6 ml-auto mr-auto">
-        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: ivory;" onclick="window.location.href='{{ event.url }}'">
-          <div class="card__content">
-              <h2 class="card__header">Archive</h2>
+        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: #e6f3e6; text-align: center" onclick="window.location.href='{{ event.url }}'">
+          <div class="card__image">
+            <img class="image" style="object-fit: cover; aspect-ratio: 16 / 9;" src="images/placeholder-archive.jpg"/>
+            <div class="overlay overlay--bottom">
+              <h3 class="card__header">Archive</h3>
+            </div>
+          </div>  
+        </div>
+      </div>
+      
+      <div class="cell--12 cell--lg-6 ml-auto mr-auto">
+        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: #e6f3e6; text-align: center" onclick="window.location.href='{{ event.url }}'">
+          <div class="card__image">
+            <img class="image" style="object-fit: cover; aspect-ratio: 16 / 9;" src="images/placeholder-team.jpg"/>
+            <div class="overlay overlay--bottom">
+              <h3 class="card__header">Team</h3>
+            </div>
           </div>
         </div>
       </div>
       
       <div class="cell--12 cell--lg-6 ml-auto mr-auto">
-        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: ivory;" onclick="window.location.href='{{ event.url }}'">
-          <div class="card__content">
-            <h2 class="card__header">Team</h2>
-          </div>
-        </div>
-      </div>
-      
-      <div class="cell--12 cell--lg-6 ml-auto mr-auto">
-        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: ivory;" onclick="window.location.href='{{ event.url }}'">
-          <div class="card__content">
-              <h2 class="card__header">Resources</h2>
+        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: #e6f3e6; text-align: center" onclick="window.location.href='{{ event.url }}'">
+          <div class="card__image">
+            <img class="image"  src="images/placeholder-resources.jpg"/>
+            <div class="overlay overlay--bottom">
+              <h3 class="card__header">Resources</h3>
+            </div>
           </div>
         </div>
       </div>
@@ -75,9 +92,10 @@ article_header:
       </div> 
     </div>
 
-    <div class="card ml-auto mr-auto mt-auto mb-4" style="text-align: center;" >
+    <div class="card card--flat ml-auto mr-auto mt-auto mb-4">
       <div class="card__content" >
-        <h5 class = "card__header"> Join us </h5>
+        <p>Become a member of our vibrant nature community</p>
+        <button class="button button--success button--pill button--md">Sign Up</button>
       </div> 
     </div>
   </div>  
