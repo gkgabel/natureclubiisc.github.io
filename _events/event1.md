@@ -8,9 +8,16 @@ date: 2024-07-01
 {% if page.title %}
   {% assign event_dir_name = page.title | downcase | replace: " ", "_" %}
   {{ event_dir_name }}
-  {% assign image_files = site.static_files | where_exp: "file", "file.path contains '/event_images/' and file.path contains event_dir_name" %}
+  {% assign filtered_files = "" %}
+  {% for file in site.static_files %}
+    {% if file.path contains '/event_images/' and file.path contains event_dir_name %}
+      {% assign filtered_files = filtered_files | append: file.path | append: "," %}
+    {% endif %}
+  {% endfor %}
+  {{ filtered_files}}
+  {% assign image_files = filtered_files | split: "," %}
 {% endif %}
-
+{{image_files[0]}}
 <style>
   /* Modern Swiper Gallery Styling */
   .event-gallery {
@@ -142,7 +149,7 @@ date: 2024-07-01
   <div class="swiper__wrapper">
     {% for file in image_files %}
     <div class="swiper__slide">
-      <img class="lightbox-ignore" src="{{ file.path }}" alt="Event photo {{ forloop.index }}"/>
+      <img class="lightbox-ignore" src="{{ file }}" alt="Event photo {{ forloop.index }}"/>
       <div class="image-caption">
         <h4>Image {{ forloop.index }}</h4>
         <p><!-- You can add dynamic captions here later --></p>
