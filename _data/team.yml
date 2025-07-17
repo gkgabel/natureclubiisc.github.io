@@ -16,40 +16,40 @@ members:
   - name: Sarah Johnson
     position:
     bio: Sarah oversees our daily operations and strategic planning initiatives.
-    image: /images/team/sarah-johnson.jpg
+    image: images/team/sarah-johnson.jpg
     email: sarah@example.com
 
   - name: Michael Chen
     position:
     bio: Michael specializes in full-stack development with a focus on scalable architecture.
-    image: /images/team/michael-chen.jpg
+    image: images/team/michael-chen.jpg
     github: https://github.com/michaelchen
     website: https://michaelchen.dev
 
   - name: Emily Rodriguez
     position:
     bio: Emily creates beautiful, responsive interfaces with expertise in modern JavaScript frameworks.
-    image: /images/team/emily-rodriguez.jpg
+    image: images/team/emily-rodriguez.jpg
     github: https://github.com/emilyrodriguez
     website: https://emilyrodriguez.me
 
   - name: David Kim
     position:
     bio: David focuses on database optimization and API development.
-    image: /images/team/david-kim.jpg
+    image: images/team/david-kim.jpg
     github: https://github.com/davidkim
 
   - name: Lisa Wang
     position:
     bio: Lisa ensures our customers receive the best support possible.
-    image: /images/team/lisa-wang.jpg
+    image: images/team/lisa-wang.jpg
 
   - name: Robert Martinez
     position: 
     bio: Robert helps customers troubleshoot technical issues with our products.
-    image: /images/team/robert-martinez.jpg
+    image: images/team/robert-martinez.jpg
 
   - name: Aisha Patel
     position:
     bio: Aisha gathers feedback from users to improve our product experience.
-    image: /images/team/aisha-patel.jpg
+    image: images/team/aisha-patel.jpg
