@@ -1,58 +1,55 @@
 members:
   - name: Jane Doe
-    position: CEO & Founder
+    position: Convenor
     bio: Jane has over 15 years of experience in the industry and founded our company in 2018.
-    image: /images/team/jane-doe.jpg
+    image: https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/03/jujutsu-kaisen-gojo-season-2.png
     email: jane@example.com
-    linkedin: https://linkedin.com/in/janedoe
-    twitter: https://twitter.com/janedoe
+    linkedin:
+    twitter: 
 
   - name: John Smith
-    position: CTO
+    position: Convenor
     bio: John leads our technology initiatives and has a background in software architecture.
-    image: /images/team/john-smith.jpg
+    image: https://drive.usercontent.google.com/download?id=1D6Azlys8W-WcwtrR9KpXm-dkfYws9KtB
     email: john@example.com
-    linkedin: https://linkedin.com/in/johnsmith
 
   - name: Sarah Johnson
-    position: COO
+    position:
     bio: Sarah oversees our daily operations and strategic planning initiatives.
     image: /images/team/sarah-johnson.jpg
     email: sarah@example.com
-    linkedin: https://linkedin.com/in/sarahjohnson
-    twitter: https://twitter.com/sarahjohnson
 
   - name: Michael Chen
-    position: Lead Developer
+    position:
     bio: Michael specializes in full-stack development with a focus on scalable architecture.
     image: /images/team/michael-chen.jpg
     github: https://github.com/michaelchen
     website: https://michaelchen.dev
 
   - name: Emily Rodriguez
-    position: Front-End Developer
+    position:
     bio: Emily creates beautiful, responsive interfaces with expertise in modern JavaScript frameworks.
     image: /images/team/emily-rodriguez.jpg
     github: https://github.com/emilyrodriguez
     website: https://emilyrodriguez.me
 
   - name: David Kim
-    position: Backend Developer
+    position:
     bio: David focuses on database optimization and API development.
     image: /images/team/david-kim.jpg
     github: https://github.com/davidkim
 
   - name: Lisa Wang
-    position: Customer Support Lead
+    position:
     bio: Lisa ensures our customers receive the best support possible.
     image: /images/team/lisa-wang.jpg
 
   - name: Robert Martinez
-    position: Technical Support Specialist
+    position: 
     bio: Robert helps customers troubleshoot technical issues with our products.
     image: /images/team/robert-martinez.jpg
 
   - name: Aisha Patel
-    position: User Experience Researcher
+    position:
     bio: Aisha gathers feedback from users to improve our product experience.
     image: /images/team/aisha-patel.jpg
