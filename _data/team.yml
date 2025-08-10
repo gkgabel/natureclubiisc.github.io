@@ -1,55 +1,85 @@
 members:
-  - name: Jane Doe
+  - name: Subhasmita Patro 
     position: Convenor
-    bio: Jane has over 15 years of experience in the industry and founded our company in 2018.
-    image: https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/03/jujutsu-kaisen-gojo-season-2.png
-    email: jane@example.com
+    bio: Electrical engineer turned behavioural eco-endocrinologist. My current research focuses on signalling and communication in lizards, with an emphasis on the physiological mechanisms that underlie these behaviours. In my free time, I enjoy exploring and learning about the animals and plants around me, particularly birds, insects and mushrooms, and all things weird and colorful. 
+    image: images/team/subhasmita.jpg
+    email: subhasmitap@iisc.ac.in
+
+  - name: Naman
+    position: Convenor
+    bio :  I have a deep interest in trekking and adventure, and I enjoy exploring diverse natural terrains including landscapes, caves, hills, mountains, and coastal region 
+    image: images/team/place_holder.jpg
+    email:
+
+  - name: Kedar Wagh
+    position: Convener(2023-24)
+    bio: A herpetofauna enthusiast and occasional wildlife (herp) photographer. Interested in finding rare wild things. Loves often ignored and unpopular fauna. Organizes campus night walks and is actively involved in planning and coordinating several other nature walks and nature club events. Nature Club Coordinator (2023-25)
+    image: images/team/kedar.jpg
+    email: kedars@iisc.ac.in
+
+  - name : Yogesh 
+    bio : A bushwalker and quiet observer of the wild, with a deep fascination for reptiles and an ever-growing interest in mammals and birds. Finds unmatched beauty in forests, mountains, and desert landscapes. My research focuses on developing next-gen antibodies against snake venoms and studying the ecological behaviour of snakes in the wild. A street photographer by instinct and a wildlife and bird photographer by passion, I serve as the Nature Club coordinator since 2024, actively planning treks, nature walks, and events that connect people with the wild wonders. 
+    email : yogeshkumar@iisc.ac.in 
+    image: images/team/yogesh.jpg
     linkedin:
     twitter: 
 
-  - name: John Smith
-    position: Convenor
-    bio: John leads our technology initiatives and has a background in software architecture.
-    image: https://drive.usercontent.google.com/download?id=1D6Azlys8W-WcwtrR9KpXm-dkfYws9KtB
-    email: john@example.com
+  - name: Sagarika Jaiswal 
+    bio: I like observing strange behaviour and colourful beings. So, I joined IISc Nature Club while pursuing PhD in Cognitive Neuroscience as my side quest. I love admiring birds, butterflies, trees and poking at mushrooms. 
+    image: images/team/sagarika.jpg
+    email: sagarikaj@iisc.ac.in 
 
-  - name: Sarah Johnson
+  - name: Abhishek Uppar 
+    bio: Is a researcher at CSA, and Is always enthusiastic to hear and understand birds, trees and insects (in that order). He wishes to contribute to maintaining and managing the online footprint for the club. 
+    email: abhisheku@iisc.ac.in 
+    image: images/team/place_holder.jpg
+
+  - name: Aqreeb Khan
+    bio: Cell biologist by day, and nature enthusiast all the time. I especially find joy in birdwatching, and I love finding creative ways to bring nature into art. Whether it’s designing posters or hosting fun nature-art events, I enjoy combining my love for nature and creativity. 
+    email: aqreebkhan@iisc.ac.in
+    image: images/team/aqreeb.JPG
+
+  - name: Siddharth Fitwe 
+    bio: Biotech engineer with an interest for ecology and evolution. Thrive in the forest and am excited by snakes, colourful birds and wildlife in general.  In love with macrofungi (mushrooms)- ID, photography, collecting samples for documentation and research. Currently working on generating bioethanol from seaweed biomass using fungal enzymes.  (instagram ars_fungorum) 
+    image: images/team/siddharth.jpg
+    email: siddharth.fitwe@gmail.com
+    insta: ars_fungorum
+
+  - name: Utsav Biswas  
+    bio: Hi all! I am Utsav, pursuing a PhD at the Centre for Ecological Sciences, IISc and am I’m fascinated by nature. Specific interests include mainly birds, butterflies, dragonflies & damselflies, also entire ecosystem level phenomena. And of course, simply spending leisure time in nature needs no mention. I like to go on bird and butterfly walks & have conducted surveys, both on and off campuses, often with WWF. I prefer short groups for these walks. Oh yes..love photography! Nature Club Coordinator (2024-25)
     position:
-    bio: Sarah oversees our daily operations and strategic planning initiatives.
-    image: images/team/sarah-johnson.jpg
-    email: sarah@example.com
+    image: images/team/utsav.jpg
+    github: 
+    website: 
+    email: utsavbiswas@iisc.ac.in 
 
-  - name: Michael Chen
+  - name: Shaurya Rahul Narlanka 
     position:
-    bio: Michael specializes in full-stack development with a focus on scalable architecture.
-    image: images/team/michael-chen.jpg
-    github: https://github.com/michaelchen
-    website: https://michaelchen.dev
+    bio: I have a deep interest in birds and generally all of nature. When I am not looking into the skies or the ground, I conduct research to improve energy access for all. 
+    image: images/team/rahul.jpg
+    email: rahulnarlanka@gmail.com 
 
-  - name: Emily Rodriguez
-    position:
-    bio: Emily creates beautiful, responsive interfaces with expertise in modern JavaScript frameworks.
-    image: images/team/emily-rodriguez.jpg
-    github: https://github.com/emilyrodriguez
-    website: https://emilyrodriguez.me
-
-  - name: David Kim
-    position:
-    bio: David focuses on database optimization and API development.
-    image: images/team/david-kim.jpg
-    github: https://github.com/davidkim
-
-  - name: Lisa Wang
-    position:
-    bio: Lisa ensures our customers receive the best support possible.
-    image: images/team/lisa-wang.jpg
-
-  - name: Robert Martinez
+  - name: Manish Tamta
     position: 
-    bio: Robert helps customers troubleshoot technical issues with our products.
-    image: images/team/robert-martinez.jpg
+    image: images/team/place_holder.jpg
+    bio: Cosmologist/Particle astrophysicist by profession. Interested in birds, butterflies, mushroom and anything related to nature. Loves to take photographs and in the nature club helps with outreach and social media for awareness. 
 
-  - name: Aisha Patel
-    position:
-    bio: Aisha gathers feedback from users to improve our product experience.
-    image: images/team/aisha-patel.jpg
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+
+ 
+ 
+
+ 
+
+
