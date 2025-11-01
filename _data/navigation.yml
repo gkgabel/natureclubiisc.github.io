@@ -1,8 +1,8 @@
 header:
   - title: Upcoming
     url: /upcoming.html
-  - title: Archive
-    url: /archive.html
+  # - title: Archive
+  #   url: /archive.html
   - title: Our Team
     url: /team.html
   - title: Resources
