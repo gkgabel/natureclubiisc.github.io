@@ -227,5 +227,3 @@ plugins:
 collections:
   events:
     output: true
-  team:
-    output: true

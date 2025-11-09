@@ -1,0 +1,205 @@
+sections:
+  - title: Emergency Contacts
+    items:
+      - title: IISc Animal Welfare Group
+        size_md: 12
+        size_lg: 12
+        button_text: Rescue Contacts Page
+        button_url: https://sites.google.com/view/iisc-awg/contact/emergency-contact-numbers
+      - title: Dog Rescue, catching and Burial Services
+        icon: fas fa-dog
+        icon_color: "#4CAF50"
+        contacts:
+          - name: Kiran/ Dog Catcher
+            phone: "+91 8892812010"
+          - name:
+            phone: "+91 7406249984"
+          - name: Ganesh/ Dog Catcher
+            phone: "+91 8904356696"
+          - name: Dog Rescue Groups
+            phone: "+91 9632201065"
+          - name:
+            phone: "+91 9845080903"
+          - name:
+            phone: "+91 9844037424"
+          - name: Dog Burial Services
+            phone: "+91 9538966995"
+          - name:
+            phone: "+91 9844037424"
+      
+      - title: Snakes Rescue
+        icon: fas fa-paw
+        icon_color: "#4CAF50"
+        contacts:
+          - name: Shivappa/ Snake Catcher
+            phone: "+91 9980855720"
+          - name: Sharath/ Snake Catcher
+            phone: "+91 9880108801"
+          - name: Kumar/ Snake Catcher
+            phone: "+91 9902794711"
+          - name:
+            phone: "+91 9844530033"
+          - name:
+            phone: "+91 9342596704"
+          - name: Mohan/ Snake Catcher
+            phone: "+91 9845080903"
+          - name: BBMP Wildlife Rescue Helpline
+            phone: "+91 08022221188"
+
+
+      - title: Birds Rescue
+        icon: fas fa-dove
+        icon_color: "#4CAF50"
+        contacts:
+          - name: Avian and Reptile Rehabilitation Centre(ARRC)
+            phone: "+91 9620286800"
+          - name: Pigeon Hospital Bangalore
+            phone: "+91 9845221309"
+
+      - title: Wildlife Rescue (Loris)
+        icon: fas fa-paw
+        icon_color: "#4CAF50"
+        contacts:
+          - name: Shreyas/ People For Animals (PFA)
+            phone: "+91 8105030878"
+          - name: Salman/ People For Animals (PFA)
+            phone: "+91 9900025370"
+      
+      - title: More Rescue Services
+        icon: fas fa-ambulance
+        icon_color: "#4CAF50"
+        contacts:
+          - name: Compassion Unlimited Plus Action (CUPA)
+            phone: "+91 9845425678"
+          - name: Cow Rescuers
+            phone: "+91 9844203467"
+          - name:
+            phone: "+91 9880212545"
+          - name: Cow Rescue Vehicle
+            phone: "+91 9632038167"
+          - name: Vinod/ Cat Shelter
+            phone: "+91 8341899936"
+
+      - title: Veterinary Hospitals
+        icon: fas fa-hospital-alt
+        icon_color: "#4CAF50"
+        contacts:
+          - name: CUPA Small Animal Specialty Hospital, RT Nagar
+            phone: "+91 9108855888"
+          - name: Karnataka Veterinary, Animal, and Fisheries Sciences University (KVAFSU), Hebbal
+          - name: Dr Ravi's Pet Clinic, Malleswaram
+            phone: "+91 9964143115"
+          - name: Cat Traps for Rent (CUPA)
+            phone: "+91 9972244078"
+
+
+  - title: IISc Campus Biodiversity
+    items:
+      - title: Birds of IISc Campus
+        icon: fas fa-binoculars
+        icon_color: "#FF9800"
+        description: Our campus is home to over 120 species of birds. Check out our comprehensive guide with seasonal information and spotting locations.
+        button_text: View Catalog
+        button_url: /resources/birds
+
+      - title: Plant Species on Campus
+        icon: fas fa-tree
+        icon_color: "#4CAF50"
+        description: Explore the diverse flora of IISc with our plant catalog, including rare species and medicinal plants found on campus.
+        button_text: View Catalog
+        button_url: /resources/plants
+
+      - title: Butterflies & Insects
+        icon: fas fa-bug
+        icon_color: "#9C27B0"
+        description: Discover the fascinating world of insects on our campus, with identification guides and best viewing locations.
+        button_text: View Guide
+        button_url: /resources/insects
+
+  - title: Field Guides & Apps
+    items:
+      - title: iNaturalist
+        icon: fas fa-leaf
+        icon_color: "#2196F3"
+        description: Record observations and get species identification help
+        button_text: Visit Site
+        button_url: https://www.inaturalist.org/
+
+      - title: Merlin Bird ID
+        icon: fas fa-feather-alt
+        icon_color: "#2196F3"
+        description: Bird identification app with South Asia pack
+        button_text: Visit Site
+        button_url: https://www.merlin.allaboutbirds.org/
+
+      - title: PlantNet
+        icon: fas fa-seedling
+        icon_color: "#2196F3"
+        description: Plant identification using image recognition
+        button_text: Visit Site
+        button_url: https://www.plantnet.org/
+
+      - title: India Biodiversity Portal
+        icon: fas fa-database
+        icon_color: "#2196F3"
+        description: Database of Indian flora and fauna
+        button_text: Visit Site
+        button_url: https://indiabiodiversity.org/
+
+      - title: Bird Count India
+        icon: fas fa-chart-line
+        icon_color: "#2196F3"
+        description: Citizen science bird monitoring program
+        button_text: Visit Site
+        button_url: https://www.birdcount.in/
+
+  - title: Citizen Science Projects
+    items:
+      - title: eBird India
+        icon: fas fa-crow
+        icon_color: "#E91E63"
+        description: Report bird sightings and help track bird populations
+        button_text: Visit Site
+        button_url: https://ebird.org/india
+
+      - title: Butterflies of India
+        icon: fas fa-kiwi-bird
+        icon_color: "#E91E63"
+        description: Document butterfly diversity across the Indian subcontinent
+        button_text: Visit Site
+        button_url: https://www.ifoundbutterflies.org/
+
+      - title: FrogWatch India
+        icon: fas fa-frog
+        icon_color: "#E91E63"
+        description: Help monitor amphibian populations and document frog species
+        button_text: Visit Site
+        button_url: https://www.frogwatch.in/
+
+  - title: Club Resources
+    items:
+      - title: Equipment Borrowing
+        icon: fas fa-binoculars
+        icon_color: "#9C27B0"
+        description: Club members can borrow equipment for nature activities
+        list:
+          - Binoculars (8 pairs available)
+          - Field guides and reference books
+          - Butterfly nets
+          - Camera traps
+          - GPS units
+        button_text: Borrowing Policy
+        button_url: /resources/equipment
+
+      - title: Club Documents
+        icon: fas fa-file-alt
+        icon_color: "#9C27B0"
+        description: Access club documentation and resources
+        list:
+          - Club Constitution
+          - Annual Reports
+          - Meeting Minutes
+          - Club Calendar
+          - Photography Guidelines
+        button_text: Member Login
+        button_url: /members/login

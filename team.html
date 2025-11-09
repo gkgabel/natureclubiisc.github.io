@@ -2,53 +2,99 @@
 layout: page
 title: Our Team
 show_title: false
-full_width: true
+full_width: false
 ---
 
-<!-- <div class="hero hero--center hero--dark" style="background-image: linear-gradient(rgba(0, 30, 100, 0.7), rgba(0, 30, 100, 0.9)), url(/assets/images/team-banner.jpg); min-height: 280px;">
-  <div class="hero__content">
-    <h1>Our Team</h1>
-    <p>Meet the talented individuals who make our organization great</p>
-  </div>
-</div> -->
+<style>
+  /* Page title */
+  .team-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Card image */
+  .team-page .card__image {
+    overflow: hidden;
+  }
+  .team-page .card__image img {
+    object-fit: cover;
+    aspect-ratio: 9 / 10;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Card header */
+  .team-page .card__header {
+    text-align: center;
+  }
+  
+  /* Position text */
+  .team-position {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Bio expand on hover */
+  .team-bio {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .team-page .card:hover .team-bio {
+    -webkit-line-clamp: unset;
+    max-height: 1000px;
+  }
+  
+  /* Social buttons */
+  .team-social {
+    text-align: center;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+</style>
 
 <div class="layout--article">
-  <div class="container">
+  <div class="team-page">
     <div class="page__content">
-      <h2 style="text-align: center; margin-bottom: 2rem;">Club Coordinators</h2>
+      <h2 class="team-title">Club Coordinators</h2>
       
-      <div class="grid">
+      <div class="grid grid--p-3">
         {% for member in site.data.team.members %}
-          <div class="cell cell--6 cell--md-4 cell--lg-3">
-            <div class="card ml-2 mr-2 mt-2 mb-2">
-              <div class="card__image" style="overflow: hidden;">
-                <img style="object-fit: cover; aspect-ratio: 9 / 10;" src="{{ member.image }}" alt="{{ member.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;"/>
-                {% if member.featured %}
-                <div class="overlay overlay--bottom">
-                  <span class="badge badge--primary">Featured Expert</span>
-                </div>
-                {% endif %}
+          <div class="cell cell--12 cell--md-6 cell--lg-4">
+            <div class="card">
+              <div class="card__image">
+                <img src="{{ member.image }}" alt="{{ member.name }}"/>
               </div>
               <div class="card__content">
                 <div>
                   <h3>{{ member.name }}</h3>
                 </div>
-                <p><strong>{{ member.position }}</strong></p>
-                <p>{{ member.bio }}</p>
-                <div>
-                  {% if member.email %}
+                {% if member.position %}
+                  <p class="team-position"><strong>{{ member.position }}</strong></p>
+                {% endif %}
+                <!-- Bio with line clamp -->
+                <p class="team-bio">{{ member.bio }}</p>
+                <div class="team-social">
+                  <!--- {% if member.email %}
                     <a href="mailto:{{ member.email }}" class="button button--outline-info button--sm">
-                      <i class="fas fa-envelope"></i> Email
+                      <i class="fas fa-envelope"></i>
                     </a>
-                  {% endif %}
+                  {% endif %} -->
                   {% if member.linkedin %}
                     <a href="{{ member.linkedin }}" class="button button--outline-info button--sm" target="_blank">
-                      <i class="fab fa-linkedin"></i> LinkedIn
+                      <i class="fab fa-linkedin"></i>
                     </a>
                   {% endif %}
                   {% if member.twitter %}
                     <a href="{{ member.twitter }}" class="button button--outline-info button--sm" target="_blank">
-                      <i class="fab fa-twitter"></i> Twitter
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  {% endif %}
+                  {% if member.instagram %}
+                    <a href="https://www.instagram.com/{{ member.instagram }}" class="button button--outline-info button--sm" target="_blank">
+                      <i class="fab fa-instagram"></i>
                     </a>
                   {% endif %}
                 </div>
@@ -58,11 +104,6 @@ full_width: true
         {% endfor %}
       </div>
       
-      <div style="text-align: center; margin: 4rem 0;">
-        <h2>Join Our Team</h2>
-        <p>Interested in working with us? Check out here.</p>
-        <a href="/careers" class="button button--primary">View Open Positions</a>
-      </div>
     </div>
   </div>
 </div>
