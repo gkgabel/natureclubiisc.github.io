@@ -1,102 +1,103 @@
 ---
-layout: landing
-title: Nature Club IISc Bangalore
-mode: immersive
-header: true
-show_title: true
+layout: page
+header: false
+show_title: false
+full_width: true
 description: Welcome to the Nature Club! Explore, learn, and connect with nature.
 hero_button:
   text: Discover More
   url: "#main-content"
-article_header:
-  type: overlay
-  theme: dark
-  height: 100vh
-  background_color: '#123'
-  background_image:
-    src: images/vecteezy_blue-mountain-landscape-background-illustration_7692868.jpg
 ---
 
-
 <div id="main-content" class="grid-container">
+  <!-- Left column: title, description, navigation -->
   <div class="grid grid--p3">
-    <div class="cell--12 cell--lg-3 ml-auto mr-auto">
-      <div class="card ml-auto mr-auto mt-2 mb-2" style="text-align: center" >
-        <div class="card__content" >
-          <h5>WELCOME</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        </div> 
-        <div class="card__image">
-          <img class="image" src="images/people-8559416_1280.png"/>
+    <div class="cell--12 cell--lg-6 ml-auto mr-auto">
+      <div class="card index-hero-card ml-2 mr-2 mt-2 mb-2" style="padding: 2rem; max-width: 100%; height: 50vh;">
+        <div class="card__content">
+          <h1>Nature Club IISc Bangalore</h1>
+          <h2>Welcome to the Nature Club! Explore, learn, and connect with nature.</h2>
         </div>
       </div>
     </div>
-
-    <div class="cell--12 cell--lg-6 mt-4">
-      <div class="grid">
-      <div class="cell--12 cell--lg-6 ml-auto mr-auto">
-        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: #e6f3e6; text-align: center" onclick="window.location.href='{{ event.url }}'">
-          <div class="card__image">
-            <img class="image" style="object-fit: cover; aspect-ratio: 16 / 9;" src="images/placeholder-events.jpg"/>
-            <div class="overlay overlay--bottom">
-              <h3 class="card__header">Events</h3>
+    
+    <div class="cell--12 cell--lg-6 ml-auto mr-auto">
+      <div class="index-image-grid ml-2 mr-2 mt-2 mb-2" style="height: 50vh;">
+      <div class="grid grid--p3" style="margin-top: -3rem; margin-left: -3rem; margin-right: -3rem; background-color: rgb(202, 191, 111);">
+        
+        {% comment %} Dynamic image grid based on folder structure {% endcomment %}
+        
+        {% comment %} Get columns from file naming convention col#_image# {% endcomment %}
+        {% assign columns = "" | split: "" %}
+        {% for file in site.static_files %}
+          {% if file.path contains "index_images/col" and file.extname contains "jpg" or file.extname contains "jpeg" or file.extname contains "png" or file.extname contains "webp" %}
+            {% assign filename = file.path | split: "/" | last %}
+            {% assign col_part = filename | split: "_" | first %}
+            {% unless columns contains col_part %}
+              {% assign columns = columns | push: col_part %}
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+        
+        {% comment %} Calculate cell width based on number of columns {% endcomment %}
+        {% assign cell_width = 12 | divided_by: columns.size %}
+        
+        {% comment %} Generate columns dynamically {% endcomment %}
+        {% for column in columns %}
+          <div class="cell--{{ cell_width }} cell--lg-{{ cell_width }} ml-auto mr-auto">
+            <div class="grid grid--p3">
+              {% comment %} Get all images for this column {% endcomment %}
+              {% for file in site.static_files %}
+                {% if file.path contains "index_images/" and file.path contains column and file.extname contains "jpg" or file.extname contains "jpeg" or file.extname contains "png" or file.extname contains "webp" %}
+                  <div class="cell--12 cell--lg-12 ml-auto mr-auto">
+                    <img src="{{ file.path }}" alt="Nature Club Image" style="width: 100%;">
+                  </div>
+                {% endif %}
+              {% endfor %}
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="cell--12 cell--lg-6 ml-auto mr-auto">
-        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: #e6f3e6; text-align: center" onclick="window.location.href='{{ event.url }}'">
-          <div class="card__image">
-            <img class="image" style="object-fit: cover; aspect-ratio: 16 / 9;" src="images/placeholder-archive.jpg"/>
-            <div class="overlay overlay--bottom">
-              <h3 class="card__header">Archive</h3>
-            </div>
-          </div>  
-        </div>
-      </div>
-      
-      <div class="cell--12 cell--lg-6 ml-auto mr-auto">
-        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: #e6f3e6; text-align: center" onclick="window.location.href='{{ event.url }}'">
-          <div class="card__image">
-            <img class="image" style="object-fit: cover; aspect-ratio: 16 / 9;" src="images/placeholder-team.jpg"/>
-            <div class="overlay overlay--bottom">
-              <h3 class="card__header">Team</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="cell--12 cell--lg-6 ml-auto mr-auto">
-        <div class="card card--clickable mt-2 mb-2 ml-auto mr-auto" style="background-color: #e6f3e6; text-align: center" onclick="window.location.href='{{ event.url }}'">
-          <div class="card__image">
-            <img class="image"  src="images/placeholder-resources.jpg"/>
-            <div class="overlay overlay--bottom">
-              <h3 class="card__header">Resources</h3>
-            </div>
-          </div>
-        </div>
-      </div>
+        {% endfor %}
+        
       </div>
     </div>
 
-  <div class="cell--12 cell--lg-3">    
-      <div class="card card--polaroid mt-4 mb-4 ml-auto mr-auto">
-        <div class="card__image">
-          <img src="images/just-some-shots-i-took-after-work-this-morning-v0-z0ytnvdszr8d1.jpg.webp" alt="Find of the Week">
+    <!-- Navigation Cards Below Left Card -->
+    <div class="grid grid--p2" style="margin-top: 1.5rem;">
+      {% for item in site.data.navigation.header %}
+        <div class="cell--6 cell--md-4 cell--lg-3">
+          <a href="{{ item.url }}" class="card card--clickable card--primary" style="display: block; text-decoration: none;">
+            <div class="card__content" style="text-align: center;">
+              <span style="font-weight: 600;">{{ item.title }}</span>
+            </div>
+          </a>
         </div>
-        <p class="card__header">Find of the Week</p>
-        <p class="card__content">
-          Spotted this beautiful sparrow on a lichen-covered rock! <u> @jon_doe</u>
-        </p>
-      </div>
+      {% endfor %}
     </div>
+  </div>
+    
 
-    <div class="card card--flat ml-auto mr-auto mt-auto mb-4">
-      <div class="card__content" >
-        <p>Become a member of our vibrant nature community</p>
-        <button class="button button--success button--pill button--md">Sign Up</button>
-      </div> 
+  <!-- Find of the Week moved below -->
+
+  <div style="margin-top: 3rem; text-align: center;">
+    <div class="card card--polaroid mt-4 mb-4 ml-auto mr-auto" style="display: inline-block; max-width: 400px;">
+      <div class="card__image">
+        <img src="images/just-some-shots-i-took-after-work-this-morning-v0-z0ytnvdszr8d1.jpg.webp" alt="Find of the Week">
+      </div>
+      <p class="card__header">Find of the Week</p>
+      <p class="card__content">
+      Spotted this beautiful sparrow on a lichen-covered rock! <u>@jon_doe</u>
+      </p>
     </div>
-  </div>  
+  </div>
+ <!-- s
+  <div class="card index-stats-card mt-4 mb-4 ml-auto mr-auto" style="padding: 1.5rem;">
+    <h3>🌿 Club Stats</h3>
+    <div style="text-align: center;">
+      <div class="stats-number">150+</div>
+      <div class="stats-label" style="margin-bottom: 1rem;">Active Members</div>
+      <div class="stats-number">25+</div>
+      <div class="stats-label">Events This Year</div>
+    </div>
+  </div>
 </div>
+-->

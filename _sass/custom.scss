@@ -33,4 +33,84 @@
   text-align: center;
 }
 
+
+
+// Custom styles for index page that use theme variables
+
+.index-hero-card {
+  background-color: $main-color-3;
+  border-radius: map-get($base, border-radius-lg);
+  box-shadow: 0 0 0 0;
+  overflow: hidden;
+  
+  .card__content {
+    h1 {
+      color: $text-color-3;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+    
+    h2 {
+      color: $text-color-3;
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.index-image-grid {
+  background-color: $main-color-3;
+  border: 2px solid $border-color-l;
+  border-radius: map-get($base, border-radius-lg);
+  overflow: hidden;
+  background: linear-gradient(135deg, $background-color 0%, mix($main-color-3, $background-color, 10%) 100%);
+  
+  .grid {
+    margin: map-get($spacers, 2);
+    
+    .cell--12 {
+      padding: map-get($spacers, 1);
+      
+      img {
+        border-radius: map-get($base, border-radius-sm);
+        transition: map-get($animation, duration) map-get($animation, timing-function);
+        
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+}
+
+.index-stats-card {
+  background: linear-gradient(135deg, mix($main-color-3, $background-color, 15%) 0%, mix($main-color-2, $background-color, 10%) 100%);
+  border-radius: map-get($base, border-radius-lg);
+  box-shadow: 0 4px 16px rgba($main-color-1, 0.08);
+  
+  h3 {
+    color: $text-color-d;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    margin-bottom: map-get($spacers, 3);
+    text-align: center;
+  }
+  
+  .stats-number {
+    font-size: map-get($base, font-size-h1);
+    font-weight: map-get($base, font-weight-bold);
+    color: $main-color-1;
+    font-family: 'Caveat', cursive;
+  }
+  
+  .stats-label {
+    font-size: map-get($base, font-size-sm);
+    color: $text-color-l;
+    font-family: 'Caveat', cursive;
+  }
+}
 /* end custom scss snippet */
