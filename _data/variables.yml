@@ -33,6 +33,7 @@ default:
     show_author_profile: false
     show_subscribe: false
     full_width: false
+    full_header_width: false
     sharing: false
     comment: true
     license: false

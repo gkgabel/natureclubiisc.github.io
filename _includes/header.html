@@ -5,7 +5,11 @@
 {%- else -%}
   <header class="header" {%- if include.background -%} style="background: {{ include.background }};" {%- endif -%}>
 {%- endif -%}
-    <div class="main">
+    {%- if page.full_header_width == true -%}
+      <div class="main" style="max-width: 100%;">
+    {%- else -%}
+      <div class="main">
+    {%- endif -%}
       <div class="header__title">
         <div class="header__brand">
           {%- include svg/logo.svg -%}
