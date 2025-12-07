@@ -23,6 +23,11 @@ layout: base
 {%- assign _full_width = __return -%}
 
 {%- include snippets/assign.html
+  target = site.data.variables.default.page.full_header_width
+  source0=layout.full_header_width source1=page.full_header_width -%}
+{%- assign _full_header_width = __return -%}
+
+{%- include snippets/assign.html
   target = site.data.variables.default.page.comment
   source0=layout.comment source1=page.comment -%}
 {%- assign _comment = __return -%}
@@ -84,7 +89,7 @@ layout: base
 
         <div class="page__content">
         {%- if _article_header_type == 'overlay' or _article_header_type == 'cover' -%}
-
+          
           {%- if _article_header_type == 'overlay' -%}
 
             {%- assign _article_header_height = page.article_header.height | default: layout.article_header.height -%}
