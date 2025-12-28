@@ -93,113 +93,113 @@ sections:
             phone: "+91 9972244078"
 
 
-  - title: IISc Campus Biodiversity
-    items:
-      - title: Birds of IISc Campus
-        icon: fas fa-binoculars
-        icon_color: "#FF9800"
-        description: Our campus is home to over 120 species of birds. Check out our comprehensive guide with seasonal information and spotting locations.
-        button_text: View Catalog
-        button_url: /resources/birds
+  # - title: IISc Campus Biodiversity
+  #   items:
+  #     - title: Birds of IISc Campus
+  #       icon: fas fa-binoculars
+  #       icon_color: "#FF9800"
+  #       description: Our campus is home to over 120 species of birds. Check out our comprehensive guide with seasonal information and spotting locations.
+  #       button_text: View Catalog
+  #       button_url: /resources/birds
 
-      - title: Plant Species on Campus
-        icon: fas fa-tree
-        icon_color: "#4CAF50"
-        description: Explore the diverse flora of IISc with our plant catalog, including rare species and medicinal plants found on campus.
-        button_text: View Catalog
-        button_url: /resources/plants
+  #     - title: Plant Species on Campus
+  #       icon: fas fa-tree
+  #       icon_color: "#4CAF50"
+  #       description: Explore the diverse flora of IISc with our plant catalog, including rare species and medicinal plants found on campus.
+  #       button_text: View Catalog
+  #       button_url: /resources/plants
 
-      - title: Butterflies & Insects
-        icon: fas fa-bug
-        icon_color: "#9C27B0"
-        description: Discover the fascinating world of insects on our campus, with identification guides and best viewing locations.
-        button_text: View Guide
-        button_url: /resources/insects
+  #     - title: Butterflies & Insects
+  #       icon: fas fa-bug
+  #       icon_color: "#9C27B0"
+  #       description: Discover the fascinating world of insects on our campus, with identification guides and best viewing locations.
+  #       button_text: View Guide
+  #       button_url: /resources/insects
 
-  - title: Field Guides & Apps
-    items:
-      - title: iNaturalist
-        icon: fas fa-leaf
-        icon_color: "#2196F3"
-        description: Record observations and get species identification help
-        button_text: Visit Site
-        button_url: https://www.inaturalist.org/
+  # - title: Field Guides & Apps
+  #   items:
+  #     - title: iNaturalist
+  #       icon: fas fa-leaf
+  #       icon_color: "#2196F3"
+  #       description: Record observations and get species identification help
+  #       button_text: Visit Site
+  #       button_url: https://www.inaturalist.org/
 
-      - title: Merlin Bird ID
-        icon: fas fa-feather-alt
-        icon_color: "#2196F3"
-        description: Bird identification app with South Asia pack
-        button_text: Visit Site
-        button_url: https://www.merlin.allaboutbirds.org/
+  #     - title: Merlin Bird ID
+  #       icon: fas fa-feather-alt
+  #       icon_color: "#2196F3"
+  #       description: Bird identification app with South Asia pack
+  #       button_text: Visit Site
+  #       button_url: https://www.merlin.allaboutbirds.org/
 
-      - title: PlantNet
-        icon: fas fa-seedling
-        icon_color: "#2196F3"
-        description: Plant identification using image recognition
-        button_text: Visit Site
-        button_url: https://www.plantnet.org/
+  #     - title: PlantNet
+  #       icon: fas fa-seedling
+  #       icon_color: "#2196F3"
+  #       description: Plant identification using image recognition
+  #       button_text: Visit Site
+  #       button_url: https://www.plantnet.org/
 
-      - title: India Biodiversity Portal
-        icon: fas fa-database
-        icon_color: "#2196F3"
-        description: Database of Indian flora and fauna
-        button_text: Visit Site
-        button_url: https://indiabiodiversity.org/
+  #     - title: India Biodiversity Portal
+  #       icon: fas fa-database
+  #       icon_color: "#2196F3"
+  #       description: Database of Indian flora and fauna
+  #       button_text: Visit Site
+  #       button_url: https://indiabiodiversity.org/
 
-      - title: Bird Count India
-        icon: fas fa-chart-line
-        icon_color: "#2196F3"
-        description: Citizen science bird monitoring program
-        button_text: Visit Site
-        button_url: https://www.birdcount.in/
+  #     - title: Bird Count India
+  #       icon: fas fa-chart-line
+  #       icon_color: "#2196F3"
+  #       description: Citizen science bird monitoring program
+  #       button_text: Visit Site
+  #       button_url: https://www.birdcount.in/
 
-  - title: Citizen Science Projects
-    items:
-      - title: eBird India
-        icon: fas fa-crow
-        icon_color: "#E91E63"
-        description: Report bird sightings and help track bird populations
-        button_text: Visit Site
-        button_url: https://ebird.org/india
+  # - title: Citizen Science Projects
+  #   items:
+  #     - title: eBird India
+  #       icon: fas fa-crow
+  #       icon_color: "#E91E63"
+  #       description: Report bird sightings and help track bird populations
+  #       button_text: Visit Site
+  #       button_url: https://ebird.org/india
 
-      - title: Butterflies of India
-        icon: fas fa-kiwi-bird
-        icon_color: "#E91E63"
-        description: Document butterfly diversity across the Indian subcontinent
-        button_text: Visit Site
-        button_url: https://www.ifoundbutterflies.org/
+  #     - title: Butterflies of India
+  #       icon: fas fa-kiwi-bird
+  #       icon_color: "#E91E63"
+  #       description: Document butterfly diversity across the Indian subcontinent
+  #       button_text: Visit Site
+  #       button_url: https://www.ifoundbutterflies.org/
 
-      - title: FrogWatch India
-        icon: fas fa-frog
-        icon_color: "#E91E63"
-        description: Help monitor amphibian populations and document frog species
-        button_text: Visit Site
-        button_url: https://www.frogwatch.in/
+  #     - title: FrogWatch India
+  #       icon: fas fa-frog
+  #       icon_color: "#E91E63"
+  #       description: Help monitor amphibian populations and document frog species
+  #       button_text: Visit Site
+  #       button_url: https://www.frogwatch.in/
 
-  - title: Club Resources
-    items:
-      - title: Equipment Borrowing
-        icon: fas fa-binoculars
-        icon_color: "#9C27B0"
-        description: Club members can borrow equipment for nature activities
-        list:
-          - Binoculars (8 pairs available)
-          - Field guides and reference books
-          - Butterfly nets
-          - Camera traps
-          - GPS units
-        button_text: Borrowing Policy
-        button_url: /resources/equipment
+  # - title: Club Resources
+  #   items:
+  #     - title: Equipment Borrowing
+  #       icon: fas fa-binoculars
+  #       icon_color: "#9C27B0"
+  #       description: Club members can borrow equipment for nature activities
+  #       list:
+  #         - Binoculars (8 pairs available)
+  #         - Field guides and reference books
+  #         - Butterfly nets
+  #         - Camera traps
+  #         - GPS units
+  #       button_text: Borrowing Policy
+  #       button_url: /resources/equipment
 
-      - title: Club Documents
-        icon: fas fa-file-alt
-        icon_color: "#9C27B0"
-        description: Access club documentation and resources
-        list:
-          - Club Constitution
-          - Annual Reports
-          - Meeting Minutes
-          - Club Calendar
-          - Photography Guidelines
-        button_text: Member Login
-        button_url: /members/login
+  #     - title: Club Documents
+  #       icon: fas fa-file-alt
+  #       icon_color: "#9C27B0"
+  #       description: Access club documentation and resources
+  #       list:
+  #         - Club Constitution
+  #         - Annual Reports
+  #         - Meeting Minutes
+  #         - Club Calendar
+  #         - Photography Guidelines
+  #       button_text: Member Login
+  #       button_url: /members/login

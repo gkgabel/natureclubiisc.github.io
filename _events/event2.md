@@ -2,6 +2,7 @@
 layout: article
 title: Event 2
 one_line_detail: Details about Event 2
+hide: true
 date: 2024-07-01
 ---
 

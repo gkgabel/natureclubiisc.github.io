@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Our Team
+title: Team
 show_title: false
 full_width: false
 full_header_width: true
@@ -31,7 +31,6 @@ full_header_width: true
   
   /* Position text */
   .team-position {
-    text-align: center;
     margin-bottom: 0.5rem;
   }
   
@@ -59,14 +58,18 @@ full_header_width: true
 <div class="layout--article">
   <div class="team-page">
     <div class="page__content">
-      <h2 class="team-title">Club Coordinators</h2>
+      <h2 class="team-title">Coordinator Group</h2>
       
       <div class="grid grid--p-3">
         {% for member in site.data.team.members %}
           <div class="cell cell--12 cell--md-6 cell--lg-4">
             <div class="card">
               <div class="card__image">
-                <img src="{{ member.image }}" alt="{{ member.name }}"/>
+                {% if member.image %}
+                  <img src="{{ member.image }}" alt="{{ member.name }}"/>
+                {% else %}
+                  <img src="images/placeholder.jpg" alt="{{ member.name }}"/>
+                {% endif %}
               </div>
               <div class="card__content">
                 <div>
