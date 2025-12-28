@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: article
 title: Event 2
 one_line_detail: Details about Event 2
@@ -211,4 +211,4 @@ hide: true
     <div class="swiper__button swiper__button--prev">Prev</div>
     <div class="swiper__button swiper__button--next">Next</div>
   </div>
-</div>
+</div> -->
