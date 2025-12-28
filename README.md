@@ -1,4 +1,2 @@
 ## Link to the website
-
-
-https://gkgabel.github.io/nc_static_website.github.io/
+https://gkgabel.github.io/natureclubiisc.github.io/

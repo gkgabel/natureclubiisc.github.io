@@ -8,7 +8,6 @@ full_header_width: true
 <div class="grid-container">
     <div class="grid grid">
         {% for event in site.events %}
-            {% unless event.hide == true %}
                 <div class="cell cell--md-6 cell--lg-6">
                     <div class="card mt-4 mb-4 ml-4 mr-4">
                         <div class="card__image">
@@ -34,7 +33,9 @@ full_header_width: true
                         </div>
                     </div>
                 </div>
-            {% endunless %}
         {% endfor %}
+        {% if site.events.size == 0 %}
+            <p>There are no upcoming events at the moment. Please check back later!</p>
+        {% endif %}
     </div>
 </div>

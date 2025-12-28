@@ -35,7 +35,7 @@ timezone: Asia/Kolkata # see https://en.wikipedia.org/wiki/List_of_tz_database_t
 ##############################
 author:
   type      : organization # "person" (default), "organization"
-  name      : NC IISc # your name
+  name      : # your name
   url       :
   avatar    : # path or url of avatar image (square)
   bio       : We are the Nature Club
