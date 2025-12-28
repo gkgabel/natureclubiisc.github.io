@@ -1,18 +1,21 @@
 members:
-  - name: Subhasmita Patro 
+  - name: Manish Tamta
     position: Convenor
-    bio: Electrical engineer turned behavioural eco-endocrinologist. My current research focuses on signalling and communication in lizards, with an emphasis on the physiological mechanisms that underlie these behaviours. In my free time, I enjoy exploring and learning about the animals and plants around me, particularly birds, insects and mushrooms, and all things weird and colorful. 
-    image: images/team/subhasmita.jpg
-    email: subhasmitap@iisc.ac.in
+    image:
+    bio: Cosmologist/Particle astrophysicist by profession. Interested in birds, butterflies, mushroom and anything related to nature. Loves to take photographs and in the nature club helps with outreach and social media for awareness. 
 
   - name: Naman
     position: Convenor
     bio :  I have a deep interest in trekking and adventure, and I enjoy exploring diverse natural terrains including landscapes, caves, hills, mountains, and coastal region 
-    image: images/team/place_holder.jpg
+    image:
     email:
 
+  - name: Subhasmita Patro 
+    bio: Electrical engineer turned behavioural eco-endocrinologist. My current research focuses on signalling and communication in lizards, with an emphasis on the physiological mechanisms that underlie these behaviours. In my free time, I enjoy exploring and learning about the animals and plants around me, particularly birds, insects and mushrooms, and all things weird and colorful. 
+    image: images/team/subhasmita.jpg
+    email: subhasmitap@iisc.ac.in
+
   - name: Kedar Wagh
-    position: Convener(2023-24)
     bio: A herpetofauna enthusiast and occasional wildlife (herp) photographer. Interested in finding rare wild things. Loves often ignored and unpopular fauna. Organizes campus night walks and is actively involved in planning and coordinating several other nature walks and nature club events. Nature Club Coordinator (2023-25)
     image: images/team/kedar.jpg
     email: kedars@iisc.ac.in
@@ -32,7 +35,7 @@ members:
   - name: Abhishek Uppar 
     bio: Is a researcher at CSA, and Is always enthusiastic to hear and understand birds, trees and insects (in that order). He wishes to contribute to maintaining and managing the online footprint for the club. 
     email: abhisheku@iisc.ac.in 
-    image: images/team/place_holder.jpg
+    image:
 
   - name: Aqreeb Khan
     bio: Cell biologist by day, and nature enthusiast all the time. I especially find joy in birdwatching, and I love finding creative ways to bring nature into art. Whether it’s designing posters or hosting fun nature-art events, I enjoy combining my love for nature and creativity. 
@@ -58,12 +61,6 @@ members:
     bio: I have a deep interest in birds and generally all of nature. When I am not looking into the skies or the ground, I conduct research to improve energy access for all. 
     image: images/team/rahul.jpg
     email: rahulnarlanka@gmail.com 
-
-  - name: Manish Tamta
-    position: 
-    image: images/team/place_holder.jpg
-    bio: Cosmologist/Particle astrophysicist by profession. Interested in birds, butterflies, mushroom and anything related to nature. Loves to take photographs and in the nature club helps with outreach and social media for awareness. 
-
  
  
 

@@ -1,6 +1,8 @@
 ---
 layout: article
-title: Event 1
+title: Sample Event 1
+hide: true
+image:
 one_line_detail: Details about Event 1
 date: 2024-07-01
 ---
@@ -14,10 +16,9 @@ date: 2024-07-01
       {% assign filtered_files = filtered_files | append: file.path | append: "," %}
     {% endif %}
   {% endfor %}
-  {{ filtered_files}}
   {% assign image_files = filtered_files | split: "," %}
 {% endif %}
-{{image_files[0]}}
+
 <style>
   /* Modern Swiper Gallery Styling */
   .event-gallery {

@@ -3,6 +3,7 @@ layout: article
 title: Event 2
 one_line_detail: Details about Event 2
 date: 2024-07-01
+hide: true
 ---
 <h6>Example Alerts from _sass/additional/_alert.scss</h6>
 <div class="article__content">

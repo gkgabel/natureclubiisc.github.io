@@ -1,9 +1,9 @@
 header:
-  - title: Upcoming
-    url: /upcoming.html
+  - title: Calendar
+    url: /calendar.html
   # - title: Archive
   #   url: /archive.html
-  - title: Our Team
+  - title: Team
     url: /team.html
   - title: Resources
     url: /resources.html
