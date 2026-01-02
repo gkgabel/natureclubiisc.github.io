@@ -101,6 +101,11 @@ full_header_width: true
                       <i class="fab fa-instagram"></i>
                     </a>
                   {% endif %}
+                  {% if member.website %}
+                    <a href="{{ member.website }}" class="button button--outline-info button--sm" target="_blank">
+                      <i class="fas fa-globe"></i>
+                    </a>
+                  {% endif %}
                 </div>
               </div>
             </div>

@@ -7,8 +7,9 @@ members:
   - name: Naman
     position: Convenor
     bio :  I have a deep interest in trekking and adventure, and I enjoy exploring diverse natural terrains including landscapes, caves, hills, mountains, and coastal region 
-    image:
+    image: images/team/naman.jpeg
     email:
+    website: https://gupta-naman-98.github.io/
 
   - name: Subhasmita Patro 
     bio: Electrical engineer turned behavioural eco-endocrinologist. My current research focuses on signalling and communication in lizards, with an emphasis on the physiological mechanisms that underlie these behaviours. In my free time, I enjoy exploring and learning about the animals and plants around me, particularly birds, insects and mushrooms, and all things weird and colorful. 
