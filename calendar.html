@@ -25,7 +25,7 @@ full_header_width: true
 
                         <div class="card__content">
                         <h2 class="card__header">{{ event.title }}</h2>
-                        <span> {{ event.date | date: "%B %d, %Y"}} </span>
+                        <span> {{ event.event_date | date: "%B %d, %Y"}} </span>
                         <p>{{ event.one_line_detail }}</p>
                             <div class="mt-3">
                                 <a class="button button--primary button--rounded button--sm" href="{{ event.url }}">Learn More</a>
