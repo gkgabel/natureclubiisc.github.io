@@ -1,3 +1,4 @@
+<!--
 ---
 layout: article
 title: Devarayanadurga Trek
@@ -13,3 +14,4 @@ show_date: False
 <img class="rounded" src="/images/event_images/devarayanadurga/devarayanaduraga_trek.jpeg" alt="Devarayanaduraga Trek">
 <p>Link for registration: <a href="https://docs.google.com/forms/d/1wf9tWatNIxufVL3A5vAa_HBCrbocN8MmKLecNdt06uY/edit">here</a></p>
 </div>
+--!>
