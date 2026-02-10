@@ -4,8 +4,15 @@ members:
     image:
     bio: Cosmologist/Particle astrophysicist by profession. Interested in birds, butterflies, mushroom and anything related to nature. Loves to take photographs and in the nature club helps with outreach and social media for awareness. 
 
-  - name: Naman
+  - name: Utsav Biswas  
+    bio: Hi all! I am Utsav, pursuing a PhD at the Centre for Ecological Sciences, IISc and am I’m fascinated by nature. Specific interests include mainly birds, butterflies, dragonflies & damselflies, also entire ecosystem level phenomena. And of course, simply spending leisure time in nature needs no mention. I like to go on bird and butterfly walks & have conducted surveys, both on and off campuses, often with WWF. I prefer short groups for these walks. Oh yes..love photography!
     position: Convenor
+    image: images/team/utsav.jpg
+    github: 
+    website: 
+    email: utsavbiswas@iisc.ac.in 
+
+  - name: Naman
     bio :  I have a deep interest in trekking and adventure, and I enjoy exploring diverse natural terrains including landscapes, caves, hills, mountains, and coastal region 
     image: images/team/naman.jpeg
     email:
@@ -49,13 +56,7 @@ members:
     email: siddharth.fitwe@gmail.com
     instagram: ars_fungorum
 
-  - name: Utsav Biswas  
-    bio: Hi all! I am Utsav, pursuing a PhD at the Centre for Ecological Sciences, IISc and am I’m fascinated by nature. Specific interests include mainly birds, butterflies, dragonflies & damselflies, also entire ecosystem level phenomena. And of course, simply spending leisure time in nature needs no mention. I like to go on bird and butterfly walks & have conducted surveys, both on and off campuses, often with WWF. I prefer short groups for these walks. Oh yes..love photography! Nature Club Coordinator (2024-25)
-    position:
-    image: images/team/utsav.jpg
-    github: 
-    website: 
-    email: utsavbiswas@iisc.ac.in 
+  
 
   - name: Shaurya Rahul Narlanka 
     position:
