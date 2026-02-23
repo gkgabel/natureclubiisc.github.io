@@ -21,7 +21,7 @@ The **IISc Nature Club** kicked off the new year with an early morning trek to *
 ## Photo Gallery
 
 <div style="text-align: center;">
-  <img src="images/event_images/devarayanadurga/dd_trek3.jpeg" alt="Dry scrubland" height="500">
+  <img src="/images/event_images/devarayanadurga/dd_trek3.jpeg" alt="Dry scrubland" height="500">
 </div>
 
 *Our trail took us through the characteristic dry scrubland and deciduous forest of the region.*
@@ -29,7 +29,7 @@ The **IISc Nature Club** kicked off the new year with an early morning trek to *
 <br>
 
 <div style="text-align: center;">
-  <img src="images/event_images/devarayanadurga/dd_trek2.jpeg" alt="Walking on sheet rock" height="500">
+  <img src="/images/event_images/devarayanadurga/dd_trek2.jpeg" alt="Walking on sheet rock" height="500">
 </div>
 
 *Navigating sections of exposed sheet rock, a typical geological feature of the area.*
@@ -37,7 +37,7 @@ The **IISc Nature Club** kicked off the new year with an early morning trek to *
 <br>
 
 <div style="text-align: center;">
-  <img src="images/event_images/devarayanadurga/dd_trek1.jpeg" alt="Group on the plateau" height="500">
+  <img src="/images/event_images/devarayanadurga/dd_trek1.jpeg" alt="Group on the plateau" height="500">
 </div>
 
 *The group taking a breather on the wide rocky plateau, enjoying the cool breeze and cloudy weather.*
@@ -45,7 +45,7 @@ The **IISc Nature Club** kicked off the new year with an early morning trek to *
 <br>
 
 <div style="text-align: center;">
-  <img src="images/event_images/devarayanadurga/dd_trek4.jpeg" alt="Landscape view" height="500">
+  <img src="/images/event_images/devarayanadurga/dd_trek4.jpeg" alt="Landscape view" height="500">
 </div>
 
 *Looking out from the plateau across the surrounding hill ranges before beginning the descent.*

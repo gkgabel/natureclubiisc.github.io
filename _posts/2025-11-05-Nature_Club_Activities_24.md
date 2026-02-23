@@ -14,14 +14,14 @@ Through these activities, we aim to spark curiosity while spreading awareness an
 ## Activity Highlights (Sept '24 – Aug '25)
 
 <div style="text-align: center;">
-  <img src="images/IMG-20240818-WA00233.jpg" alt="Centered image" height="500">
+  <img src="/images/IMG-20240818-WA00233.jpg" alt="Centered image" height="500">
 </div>
 
 In the past year, we have organized a wide range of nature-focused events. Here is a brief look at our journey:
 
 ### Workshops & Creative Contests
 <div style="text-align: center;">
-  <img src="images/IMG-20240818-WA00221.jpg" alt="Centered image" height="500">
+  <img src="/images/IMG-20240818-WA00221.jpg" alt="Centered image" height="500">
 </div>
 * **Introduction to Birding:** A foundational workshop accompanied by a guided campus bird walk.
 * **Nature Photography:** A beginner’s guide focusing on the technical aspects of capturing wildlife.
@@ -30,7 +30,7 @@ In the past year, we have organized a wide range of nature-focused events. Here 
 
 ### Guided Nature Walks
 <div style="text-align: center;">
-  <img src="images/IMG-20250204-WA00353.jpg" alt="Centered image" height="500">
+  <img src="/images/IMG-20250204-WA00353.jpg" alt="Centered image" height="500">
 </div>
 * **Campus Bird Count:** Participation in the international effort to document bird species on campus.
 * **Mushroom Walks:** Seasonal explorations of colorful fungi, including rare bioluminescent species.
@@ -39,7 +39,7 @@ In the past year, we have organized a wide range of nature-focused events. Here 
 
 ### Nocturnal Explorations
 <div style="text-align: center;">
-  <img src="images/IMG202504060825532.jpg" alt="Centered image" height="400">
+  <img src="/images/IMG202504060825532.jpg" alt="Centered image" height="400">
 </div>
 * **Fireflies & Long Exposure Photography:** A magical monsoon experience capturing the peak density of fireflies.
 * **Loris Walks:** Exclusive night walks focused on sighting the Slender Loris in the campus canopy.
