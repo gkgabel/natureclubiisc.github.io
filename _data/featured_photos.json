@@ -1,0 +1,62 @@
+[
+    {
+      "filepath": "/images/featured_photos/Jan21_2026-HimanshuGupta.jpeg",
+      "name": "Himanshu Gupta",
+      "date": "2026-01-21",
+      "place": "IISc Campus"
+    },
+    {
+      "filepath": "/images/featured_photos/Feb2_2026-SuhasKamath.jpg",
+      "name": "Suhas Kamath",
+      "date": "2026-02-02",
+      "place": "IISc Campus"
+    },
+    {
+      "filepath": "/images/featured_photos/Feb5_2026-Apoorva.jpeg",
+      "name": "Apoorva",
+      "date": "2026-02-05",
+      "place": "IISc Campus"
+    },
+    {
+      "filepath": "/images/featured_photos/Feb8_2026-IpsitaMukherjee.jpeg",
+      "name": "Ipsita Mukherjee",
+      "date": "2026-02-08",
+      "place": "IISc Campus"
+    },
+    {
+      "filepath": "/images/featured_photos/Feb15_2026-SakhiKundu.JPG",
+      "name": "Sakhi Kundu",
+      "date": "2026-02-15",
+      "place": "IISc Campus"
+    },
+    {
+      "filepath": "/images/featured_photos/Feb23_2026-KritikaGupta.jpg",
+      "name": "Kritika Gupta",
+      "date": "2026-02-23",
+      "place": "IISc Campus"
+    },
+    {
+      "filepath": "/images/featured_photos/Mar29_2026-KedarWagh.jpg",
+      "name": "Kedar Wagh",
+      "date": "2026-03-29",
+      "place": "IISc Campus"
+    },
+    {
+      "filepath": "/images/featured_photos/Apr12_2026-BinduPraveen.jpeg",
+      "name": "Bindu Praveen",
+      "date": "2026-04-12",
+      "place": "IISc Campus"
+    },
+    {
+      "filepath": "/images/featured_photos/Apr22_2026-ShreemayeDas.jpg",
+      "name": "Shreemaye Das",
+      "date": "2026-04-22",
+      "place": "IISc Campus"
+    },
+    {
+      "filepath": "/images/featured_photos/May06_2026-SumantraSarkar.jpg",
+      "name": "Sumantra Sarkar",
+      "date": "2026-05-06",
+      "place": "Staff Quarters"
+    }
+]
