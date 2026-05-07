@@ -1,0 +1,128 @@
+---
+layout: page
+permalink: /featured-photos-archive/
+---
+
+{% assign photos = site.data.featured_photos | sort: "date" | reverse %}
+
+<section class="hero hero--light" style="padding: 2rem 0 3rem 0;">
+
+    <div class="grid-container">
+
+        <!-- Header -->
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+
+            <h1 style="
+            margin-bottom: 0.6rem;
+            color: #2c3e3a;
+          ">
+                Featured Photo Archive
+            </h1>
+
+            <p style="
+           max-width: 700px;
+           margin: 0 auto;
+           color: #5f6f6c;
+           line-height: 1.7;
+         ">
+                A collection of photographs featured on the Nature Club IISc Bengaluru homepage.
+            </p>
+
+        </div>
+
+        <!-- Photo Grid -->
+        <div class="grid grid--p2">
+
+            {% for photo in photos %}
+
+            <div class="cell cell--12 cell--md-6 cell--lg-4" style="margin-bottom: 1.8rem;">
+
+                <div class="card card--polaroid m-2" style="
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+       ">
+
+                    <!-- Image -->
+                    <div class="card__image">
+
+                        <img src="{{ photo.filepath }}" alt="Featured photo" loading="lazy" style="
+          width: 100%;
+          aspect-ratio: 4 / 3;
+          object-fit: cover;
+        ">
+
+                    </div>
+
+                    <!-- Content -->
+                    <div class="card__content" style="
+           padding: 0.7rem 0.9rem 0.8rem 0.9rem;
+           display: flex;
+           flex-direction: column;
+         ">
+
+                        <!-- Photographer -->
+                        <div style="
+         font-size: 0.95rem;
+         color: #3d8b85;
+         font-weight: 600;
+       ">
+
+                            {{ photo.name }}
+
+                        </div>
+
+                        <!-- Date + Location -->
+                        <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.45rem;
+            font-size: 0.82rem;
+            color: #6b7c7c;
+          ">
+
+                            <span>
+                                <i class="far fa-calendar-alt" style="
+         margin-right: 0.28rem;
+         color: #3d8b85;
+       ">
+                                </i>
+
+                                {{ photo.date | date: "%B %-d, %Y" }}
+                            </span>
+
+                            <span style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            ">
+
+                                <i class="fas fa-map-marker-alt" style="
+               margin-right: 0.28rem;
+               color: #3d8b85;
+             ">
+                                </i>
+
+                                {{ photo.place }}
+
+                            </span>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
