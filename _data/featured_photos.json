@@ -76,5 +76,17 @@
       "name": "Sumedha",
       "date": "2026-06-15",
       "place": "Ashwini"
+    },
+    {
+      "filepath": "/images/featured_photos/June24_2025-KedarWagh.jpg",
+      "name": "Kedar Wagh",
+      "date": "2026-06-24",
+      "place": "Main Building"
+    },
+    {
+      "filepath": "/images/featured_photos/Jul13_2026-HoneyBhanushali.jpeg",
+      "name": "Honey Bhanushali",
+      "date": "2026-07-13",
+      "place": "Near Swimming Pool"
     }
 ]
