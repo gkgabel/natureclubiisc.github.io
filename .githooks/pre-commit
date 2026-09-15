@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Maximum allowed file size in bytes (300 KB = 307200 bytes)
+MAX_SIZE=307200
+
+# Find any staged image files that exceed the size limit
+bloated_files=""
+
+for file in $(git diff --cached --name-only --diff-filter=ACM); do
+    # Check if the file is inside an image directory or has an image extension
+    case "$file" in
+        *.jpg|*.jpeg|*.png|*.JPG|*.JPEG|*.PNG|*.webp)
+            if [ -f "$file" ]; then
+                # Get file size in bytes (handles Linux/macOS differences)
+                filesize=$(stat -c%s "$file" 2>/dev/null || stat -f%z "$file")
+                if [ "$filesize" -gt "$MAX_SIZE" ]; then
+                    # Convert size to KB for a clean error message
+                    kb_size=$((filesize / 1024))
+                    echo "❌ Error: '$file' is ${kb_size}KB (Limit is 300KB)."
+                    bloated_files="$file $bloated_files"
+                fi
+            fi
+            ;;
+    esac
+done
+
+if [ -n "$bloated_files" ]; then
+    echo ""
+    echo "🛑 Commit rejected! Please compress your images below 300KB before committing."
+    echo "   Tip: Use PIL or an online compressor, then run 'git add' again."
+    exit 1
+fi
