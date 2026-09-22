@@ -6,113 +6,51 @@ full_width: false
 full_header_width: true
 ---
 
-<style>
-  /* Page title */
-  .team-title {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  /* Card image */
-  .team-page .card__image {
-    overflow: hidden;
-  }
-  .team-page .card__image img {
-    object-fit: cover;
-    aspect-ratio: 9 / 10;
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* Card header */
-  .team-page .card__header {
-    text-align: center;
-  }
-  
-  /* Position text */
-  .team-position {
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Bio expand on hover */
-  .team-bio {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
-  .team-page .card:hover .team-bio {
-    -webkit-line-clamp: unset;
-    max-height: 1000px;
-  }
-  
-  /* Social buttons */
-  .team-social {
-    text-align: center;
-    margin-top: auto;
-    padding-top: 1rem;
-  }
-</style>
+<div class="team-page grid-container">
+  <h2 class="page-section-title">Club Coordinators (Past & Present)</h2>
 
-<div class="layout--article">
-  <div class="team-page">
-    <div class="page__content">
-      <h2 class="team-title">Coordinator Group</h2>
-      
-      <div class="grid grid--p-3">
-        {% for member in site.data.team.members %}
-          <div class="cell cell--12 cell--md-6 cell--lg-4">
-            <div class="card">
-              <div class="card__image">
-                {% if member.image %}
-                  <img src="{{ member.image }}" alt="{{ member.name }}"/>
-                {% else %}
-                  <img src="images/placeholder.jpg" alt="{{ member.name }}"/>
-                {% endif %}
-              </div>
-              <div class="card__content">
-                <div>
-                  <h3>{{ member.name }}</h3>
-                </div>
-                {% if member.position %}
-                  <p class="team-position"><strong>{{ member.position }}</strong></p>
-                {% endif %}
-                <!-- Bio with line clamp -->
-                <p class="team-bio">{{ member.bio }}</p>
-                <div class="team-social">
-                  <!--- {% if member.email %}
-                    <a href="mailto:{{ member.email }}" class="button button--outline-info button--sm">
-                      <i class="fas fa-envelope"></i>
-                    </a>
-                  {% endif %} -->
-                  {% if member.linkedin %}
-                    <a href="{{ member.linkedin }}" class="button button--outline-info button--sm" target="_blank">
-                      <i class="fab fa-linkedin"></i>
-                    </a>
-                  {% endif %}
-                  {% if member.twitter %}
-                    <a href="{{ member.twitter }}" class="button button--outline-info button--sm" target="_blank">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  {% endif %}
-                  {% if member.instagram %}
-                    <a href="https://www.instagram.com/{{ member.instagram }}" class="button button--outline-info button--sm" target="_blank">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                  {% endif %}
-                  {% if member.website %}
-                    <a href="{{ member.website }}" class="button button--outline-info button--sm" target="_blank">
-                      <i class="fas fa-globe"></i>
-                    </a>
-                  {% endif %}
-                </div>
-              </div>
+  <div class="grid grid--p-3">
+    {% for member in site.data.team.members %}
+      <div class="cell cell--12">
+        <div class="card list-card list-card--surface">
+          <div class="list-card__media">
+              {% if member.image %}
+                <img class="team-image-{{ member.image_position | default: 'center' }}" src="{{ member.image }}" alt="{{ member.name }}"/>
+              {% else %}
+                <img class="team-image-{{ member.image_position | default: 'center' }}" src="images/placeholder.jpg" alt="{{ member.name }}"/>
+              {% endif %}
+          </div>
+          <div class="list-card__body">
+            <h3 class="list-card__title">{{ member.name }}</h3>
+            {% if member.position %}
+              <p class="team-position"><strong>{{ member.position }}</strong></p>
+            {% endif %}
+            <p class="team-bio">{{ member.bio }}</p>
+            <div class="team-social">
+              {% if member.linkedin %}
+                <a href="{{ member.linkedin }}" class="button button--outline-info button--sm" target="_blank" rel="noopener">
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+              {% endif %}
+              {% if member.twitter %}
+                <a href="{{ member.twitter }}" class="button button--outline-info button--sm" target="_blank" rel="noopener">
+                  <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+              {% endif %}
+              {% if member.instagram %}
+                <a href="https://www.instagram.com/{{ member.instagram }}" class="button button--outline-info button--sm" target="_blank" rel="noopener">
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+              {% endif %}
+              {% if member.website %}
+                <a href="{{ member.website }}" class="button button--outline-info button--sm" target="_blank" rel="noopener">
+                  <i class="fas fa-globe" aria-hidden="true"></i>
+                </a>
+              {% endif %}
             </div>
           </div>
-        {% endfor %}
+        </div>
       </div>
-      
-    </div>
+    {% endfor %}
   </div>
 </div>

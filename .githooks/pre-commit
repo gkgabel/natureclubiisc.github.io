@@ -9,16 +9,14 @@ bloated_files=""
 for file in $(git diff --cached --name-only --diff-filter=ACM); do
     # Check if the file is inside an image directory or has an image extension
     case "$file" in
-        *.jpg|*.jpeg|*.png|*.JPG|*.JPEG|*.PNG|*.webp)
-            if [ -f "$file" ]; then
-                # Get file size in bytes (handles Linux/macOS differences)
-                filesize=$(stat -c%s "$file" 2>/dev/null || stat -f%z "$file")
-                if [ "$filesize" -gt "$MAX_SIZE" ]; then
-                    # Convert size to KB for a clean error message
-                    kb_size=$((filesize / 1024))
-                    echo "❌ Error: '$file' is ${kb_size}KB (Limit is 300KB)."
-                    bloated_files="$file $bloated_files"
-                fi
+        *.jpg|*.jpeg|*.png|*.webp|*.tif|*.tiff|*.JPG|*.JPEG|*.PNG|*.WEBP|*.TIF|*.TIFF)
+            # Measure the staged blob, not a possibly different working-tree file.
+            filesize=$(git cat-file -s ":$file" 2>/dev/null) || continue
+            if [ "$filesize" -gt "$MAX_SIZE" ]; then
+                # Convert size to KB for a clean error message
+                kb_size=$((filesize / 1024))
+                echo "❌ Error: '$file' is ${kb_size}KB (Limit is 300KB)."
+                bloated_files="$file $bloated_files"
             fi
             ;;
     esac

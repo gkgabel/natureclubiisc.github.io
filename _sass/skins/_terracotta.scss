@@ -1,0 +1,65 @@
+///
+// Skin: Terracotta
+// A warm, light palette for the Nature Club site.
+///
+
+$main-color-1:     #581d05;
+$text-color-1:     #fff;
+
+$main-color-2:     #e5a23c;
+$text-color-2:     #fff;
+
+$main-color-3:     #e98968;
+$text-color-3:     #fff;
+
+$main-color-theme-light: rgba(#000, .9);
+$main-color-theme-dark:  rgba(#fff, .9);
+
+$background-color: #fffaf2;
+
+$text-color-theme-light-d: #3d3834;
+$text-color-theme-light:   #5a514b;
+$text-color-theme-light-l: #8b7d73;
+
+$text-color-theme-dark-d:  rgba(#fff, .95);
+$text-color-theme-dark:    rgba(#fff, .85);
+$text-color-theme-dark-l:  rgba(#fff, .65);
+
+$text-color-d:     $text-color-theme-light-d;
+$text-color:       $text-color-theme-light;
+$text-color-l:     $text-color-theme-light-l;
+
+$text-background-color: rgba(#6f3f32, .06);
+
+$header-text-color: $text-color-3;
+$header-background: linear-gradient(60deg, #d9825f 0%, #c85c45 100%);
+
+$footer-text-color: $text-color-3;
+$footer-background: linear-gradient(60deg, #d9825f 0%, #c85c45 100%);
+
+$border-color:     mix($main-color-1, $background-color, 50%);
+$border-color-l:   mix(#6f3f32, $background-color, 12%);
+$decorate-color:   rgba(#6f3f32, .12);
+$mask-color:       rgba(#000, .9);
+$select-color:     rgba($main-color-1, .82);
+
+$green:           #6f9d68;
+$blue:            #56849a;
+$yellow:          #e5a23c;
+$red:             #c85c45;
+$text-color-function: #fff;
+
+$mail-color:       #0072c5;
+$facebook-color:   #4267b2;
+$twitter-color:    #1da1f2;
+$weibo-color:      #e6162d;
+$google-plus-color:#ea4335;
+$telegram-color:   #32afed;
+$medium-color:     #000;
+$zhihu-color:      #0084ff;
+$douban-color:     #42bd56;
+$linkedin-color:   #1074af;
+$github-color:     #000;
+$npm-color:        #fff;
+
+@import "skins/highlight/tomorrow-night";

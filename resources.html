@@ -5,57 +5,22 @@ show_title: false
 full_header_width: true
 ---
 
-<style>
-  /* Equal height cards */
-  .resources-page .cell {
-    display: flex;
-  }
-  .resources-page .card {
-    width: 100%;
-    box-shadow: none;
-    border: 1px solid #f0f0f0;
-    display: flex;
-  }
-  .resources-page .card__content {
-    width: 100%;
-    border: 1px solid #f0f0f0;
-    text-align: center;
-  }
-  .resources-page .card__header {
-    text-align: center;
-  }
-  
-  /* Resource icons */
-  .resources-icon {
-    padding: 2rem 0 1rem 0;
-    font-size: 3rem;
-  }
-  
-  /* Contact list */
-  .contact-list {
-    list-style: none;
-  }
-  .contact-name {
-    display: block;
-    border-top: 1px solid #f0f0f0;
-  }
-</style>
-
 <div class="resources-page">
+  <h2 class="page-section-title">Resources</h2>
 {% for section in site.data.resources.sections %}
 <section class="mb-5">
-  <h2 style="text-align: center;" class="mb-4">{{ section.title }}</h2>
+  <h3 class="resources-section-title">{{ section.title }}</h3>
   
   <div class="grid grid--p-3">
     {% for item in section.items %}
     <div class="cell cell--12 cell--md-{{item.size_md | default: 6 }} cell--lg-{{ item.size_lg | default: 4 }}">
-      <div class="card">
+      <div class="card card--surface">
         <div class="card__content">
           
           <!-- Icon -->
           {% if item.icon %}
           <div class="resources-icon">
-            <i class="{{ item.icon }}" style="color: {{ item.icon_color }};"></i>
+            <i class="{{ item.icon }}" aria-hidden="true"></i>
           </div>
           {% endif %}
           

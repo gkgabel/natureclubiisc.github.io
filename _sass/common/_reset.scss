@@ -50,12 +50,15 @@ body {
   font: map-get($base, font-weight) #{map-get($base, font-size)}/#{map-get($base, line-height)} map-get($base, font-family);
   ::-moz-selection {
     background: $select-color;
+    color: $text-color-theme-dark-d;
   }
   ::-webkit-selection {
     background: $select-color;
+    color: $text-color-theme-dark-d;
   }
   ::selection {
     background: $select-color;
+    color: $text-color-theme-dark-d;
   }
 }
 

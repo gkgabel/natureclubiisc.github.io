@@ -14,9 +14,9 @@
   {%- assign _show_edit_on_github = __return -%}
 
   {%- if _show_title or _show_edit_on_github -%}
-    <div class="article__header">
+    <div class="article__header{% if layout.titles %} article__header--archive{% endif %}">
       {%- if _show_title -%}
-        <header><h1>{{ _article_title }}</h1></header>
+        <header><h1{% if layout.titles %} class="page-section-title page-section-title--archive"{% endif %}>{{ _article_title }}</h1></header>
       {%- endif -%}
       {%- if page.description -%}
         <p class="hero-subtitle">{{ page.description }}</p>

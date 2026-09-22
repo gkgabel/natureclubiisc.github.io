@@ -13,7 +13,7 @@ license: false
 
 ---
 
-![Group Photo - Butterfly Walk participants](/images/event_images/butterfly_walk_sept6_26.jpeg)
+![Group Photo - Butterfly Walk participants](/images/event_images/butterfly_walk_sept6_26.webp)
 *Participants gather at the end of Sunday butterfly walk.*
 
 ---
@@ -30,6 +30,42 @@ The walk started along the open road near the Faculty Club before diving into th
 * **Lifespans & Migration:** It was also fascinating to learn about how drastically butterfly lifespans vary across species, and especially to discuss their migratory patterns.
 
 ---
+Some Captures from Trail (By Sakhi and Utsav)
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 28px 0;">
+  
+  <figure style="margin: 0;">
+    <img src="/images/event_images/common_crow.webp" alt="Mating pair of Common Crow butterflies" loading="lazy" style="width: 100%; border-radius: 6px; display: block;">
+    <figcaption style="font-size: 0.85rem; color: #555; margin-top: 6px;">Common Crow pair (<em>Euploea core</em>)</figcaption>
+  </figure>
+
+  <figure style="margin: 0;">
+    <img src="/images/event_images/grass_demon.webp" alt="Grass Demon skipper butterfly" loading="lazy" style="width: 100%; border-radius: 6px; display: block;">
+    <figcaption style="font-size: 0.85rem; color: #555; margin-top: 6px;">Grass Demon (<em>Udaspes folus</em>)</figcaption>
+  </figure>
+
+  <figure style="margin: 0;">
+    <img src="/images/event_images/great_eggfly.webp" alt="Female Great Eggfly on leaf" loading="lazy" style="width: 100%; border-radius: 6px; display: block;">
+    <figcaption style="font-size: 0.85rem; color: #555; margin-top: 6px;">Great Eggfly female (<em>Hypolimnas bolina</em>)</figcaption>
+  </figure>
+
+  <figure style="margin: 0;">
+    <img src="/images/event_images/common_fivering.webp" alt="Common Five-ring on flower" loading="lazy" style="width: 100%; border-radius: 6px; display: block;">
+    <figcaption style="font-size: 0.85rem; color: #555; margin-top: 6px;">Common Five-ring (<em>Ypthima baldus</em>)</figcaption>
+  </figure>
+
+  <figure style="margin: 0;">
+    <img src="/images/event_images/indian_wanderer.webp" alt="Indian Wanderer female on red Pentas flowers" loading="lazy" style="width: 100%; border-radius: 6px; display: block;">
+    <figcaption style="font-size: 0.85rem; color: #555; margin-top: 6px;">Indian Wanderer (<em>Pareronia hippia</em>)</figcaption>
+  </figure>
+
+  <figure style="margin: 0;">
+    <img src="/images/event_images/blue_mormon.webp" alt="Blue Mormon hovering near red flowers" loading="lazy" style="width: 100%; border-radius: 6px; display: block;">
+    <figcaption style="font-size: 0.85rem; color: #555; margin-top: 6px;">Blue Mormon (<em>Papilio polymnestor</em>)</figcaption>
+  </figure>
+
+</div>
+ ---
 
 ## Notable Sightings
 

@@ -1,36 +1,287 @@
 /* start custom scss snippet */
 /* Add to _sass/custom.scss */  
-  // Pulse animation
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-  
-  .animate-pulse {
-    animation: pulse 2s infinite;
-  }
-
+/* AI-generated: theme-aware reusable card modifiers for homepage content. */
 .card--polaroid {
   border-radius: 0rem;
   padding: 0.75rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  background-color: #ffffff;
+  box-shadow: 0 6px 20px $decorate-color;
+  background-color: $background-color;
 }
 .card--polaroid .card__image > img {
   border-radius: 0rem;
 }
 .card--polaroid .card__header {
-  font-family: 'Pacifico', cursive;
+  font-family: 'DM Sans', sans-serif;
   font-size: 1.5rem;
   text-align: center;
-  color: #256029;
+  color: $main-color-1;
   margin: 0.5rem 0 0.5rem 0;
 }
 .card--polaroid .card__content{
   font-family: 'Caveat', cursive;
-  font-size: 1.2rem;
-  color: #444;
+  font-size: 1rem;
+  color: $text-color;
   text-align: center;
+}
+
+.card--compact {
+  display: block;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.card--compact .card__content {
+  padding: 0.5rem;
+}
+
+.card--compact .card__icon {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 2.8rem;
+}
+
+.card--compact .card__title {
+  margin: 0 0 0.3rem;
+  font-size: 1.2rem;
+  color: $text-color-d;
+}
+
+.card--compact .card__description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $text-color-l;
+}
+
+.card--accent {
+  background-color: $background-color;
+  border-top: 3px solid $main-color-1;
+}
+
+.card--accent .card__icon {
+  color: $main-color-1;
+}
+
+/* AI-generated: homepage accents inherit the active light theme. */
+.home-callout {
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  border-left: 4px solid $main-color-1;
+  border-radius: map-get($base, border-radius-sm);
+  background-color: mix($main-color-2, $background-color, 8%);
+}
+.home-callout a,
+.home-featured-link,
+.home-archive-button {
+  color: $main-color-1;
+}
+.home-category-section {
+  background-color: mix($main-color-2, $background-color, 8%);
+}
+.home-featured-label {
+  margin-bottom: 0.5rem;
+  color: $text-color-l;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.home-featured-link {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+.home-archive-button {
+  display: inline-block;
+  padding: 0.72rem 1.3rem;
+  border: 1px solid $main-color-1;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+.home-archive-button:hover,
+.home-archive-button:focus-visible {
+  color: $text-color-1;
+  background-color: $main-color-1;
+  transform: translateY(-1px);
+}
+
+/* AI-generated: shared list-card layout for people, events, and similar entries. */
+.list-card {
+  display: grid;
+  grid-template-columns: minmax(0, 10rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+}
+.page-section-title {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid $border-color-l;
+  color: $text-color-d;
+  line-height: 1.2;
+  word-break: break-word;
+}
+.page-section-title--archive {
+  font-size: map-get($base, font-size-h2);
+}
+.article__header--archive {
+  margin-top: map-get($spacers, 4);
+  margin-bottom: 1.5rem;
+}
+.article__header--archive .page-section-title {
+  margin-bottom: 0;
+}
+/* AI-generated: shared theme surface for list and resource cards. */
+.list-card--surface,
+.card--surface {
+  background-color: mix($main-color-2, $background-color, 8%);
+  border: 1px solid $border-color-l;
+  box-shadow: none;
+}
+.resources-icon {
+  color: $main-color-1;
+  padding: 0.5rem 0 1rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.contact-name {
+  border-top: 1px solid $border-color-l;
+  display: block;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  font-weight: 600;
+}
+.list-card__media,
+.list-card__media img {
+  width: 10.5rem;
+  height: 10.5rem;
+}
+.list-card__media {
+  overflow: hidden;
+  background-color: mix($main-color-2, $background-color, 8%);
+  border-radius: 0;
+}
+.list-card__media img {
+  display: block;
+  object-fit: cover;
+  border-radius: 0;
+}
+.list-card__body {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding: 1.25rem 1.25rem 1.25rem 0;
+}
+.team-page .list-card {
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+}
+.team-page .list-card__media,
+.team-page .list-card__media img {
+  width: 11rem;
+  height: 11rem;
+}
+.list-card__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+.list-card__meta {
+  color: $text-color-l;
+}
+.list-card__actions {
+  margin-top: 1rem;
+}
+.list-card--event {
+  align-items: stretch;
+}
+.list-card--event .list-card__media,
+.list-card--event .list-card__media img {
+  height: 100%;
+}
+.list-card--event .list-card__media {
+  min-height: 10rem;
+}
+.list-card--event .list-card__media img {
+  min-height: 10rem;
+}
+.team-image-top { object-position: center top; }
+.team-image-bottom { object-position: center bottom; }
+.team-image-left { object-position: left center; }
+.team-image-right { object-position: right center; }
+
+.team-page {
+  padding-top: map-get($spacers, 4);
+  padding-bottom: 3rem;
+}
+.team-bio {
+  margin: 0;
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.team-position {
+  margin-bottom: 0.5rem;
+}
+.team-social {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.resources-page .cell {
+  display: flex;
+}
+.resources-page .card {
+  display: flex;
+  width: 100%;
+  background: mix($main-color-2, $background-color, 8%);
+  border: 1px solid $border-color-l;
+}
+.resources-page .card__content {
+  width: 100%;
+  padding: 1.5rem;
+}
+.resources-page .card__header {
+  text-align: center;
+}
+.resources-section-title {
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $border-color-l;
+  color: $text-color-d;
+}
+.contact-list {
+  padding: 0;
+  list-style: none;
+}
+.contact-phone {
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 600px) {
+  .list-card {
+    grid-template-columns: minmax(0, 8rem) minmax(0, 1fr);
+    gap: 1rem;
+  }
+  .list-card__media,
+  .list-card__media img {
+    width: 8rem;
+    height: 8rem;
+  }
+  .team-page .list-card {
+    grid-template-columns: minmax(0, 8rem) minmax(0, 1fr);
+  }
+  .team-page .list-card__media,
+  .team-page .list-card__media img {
+    width: 8rem;
+    height: 8rem;
+  }
+  .list-card__body {
+    padding: 1rem 1rem 1rem 0;
+  }
 }
 
 /* end custom scss snippet */

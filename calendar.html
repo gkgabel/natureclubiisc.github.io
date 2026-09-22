@@ -5,17 +5,13 @@ show_title: false
 full_width: false
 full_header_width: true
 ---
-<div class="grid-container">
-    <div class="grid grid">
+<div class="calendar-page grid-container">
+      <h2 class="page-section-title">Event Calendar</h2>
+    <div class="grid grid--p-3">
         {% for event in site.events %}
-                <div class="cell cell--md-6 cell--lg-6">
-                    <div class="card mt-4 mb-4 ml-4 mr-4">
-                        <div class="card__image">
-                            <!--
-                            <div class="overlay overlay--bottom">
-                                <span class="card__header">{{ event.date | date: "%B %d, %Y" }}</span>
-                            </div>
-                            -->
+                <div class="cell cell--12">
+                    <article class="card list-card list-card--surface list-card--event">
+                        <div class="list-card__media">
                             {% if event.image %}
                             <img src="{{ event.image }}" alt="{{ event.title }}">
                             {% else %}
@@ -23,17 +19,17 @@ full_header_width: true
                             {% endif %}
                         </div>
 
-                        <div class="card__content">
-                        <h2 class="card__header">{{ event.title }}</h2>
-                        <span> {{ event.event_date | date: "%B %d, %Y"}} </span>
+                        <div class="list-card__body">
+                        <h2 class="list-card__title">{{ event.title }}</h2>
+                        <span class="list-card__meta">{{ event.event_date | date: "%B %d, %Y"}}</span>
                         <p>{{ event.one_line_detail }}</p>
                         {% if event.show_hyperlink %}
-                            <div class="mt-3">
+                            <div class="list-card__actions">
                                 <a class="button button--primary button--rounded button--sm" href="{{ event.url }}">Learn More</a>
                             </div>
                         {% endif %}
                         </div>
-                    </div>
+                    </article>
                 </div>
         {% endfor %}
         {% if site.events.size == 0 %}
