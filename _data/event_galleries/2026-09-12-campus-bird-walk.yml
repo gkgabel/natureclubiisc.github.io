@@ -1,0 +1,31 @@
+# AI-generated: event gallery data with sequential numeric section IDs for easy Liquid reuse
+intro: All pictures by Utsav.
+title: Bird Walk Highlights
+sections:
+  - id: 1
+    images:
+      - path: /images/event_images/2026-09-12-campus-bird-walk/12-sept-26-birdwalk.webp
+        alt: Group photo of Bird Walk participants
+        caption: Participants gather at the end of the bird walk.
+  - id: 2
+    images:
+      - path: /images/event_images/2026-09-12-campus-bird-walk/brahminy-kite.webp
+        alt: Brahminy Kite
+        caption: A Brahminy Kite sitting atop a tree in the distance.
+  - id: 3
+    images:
+      - path: /images/event_images/2026-09-12-campus-bird-walk/barbet-nest.webp
+        alt: Barbet nest
+        caption: Barbet nests (the small cavities) on the tree trunk.
+      - path: /images/event_images/2026-09-12-campus-bird-walk/black-kite.webp
+        alt: Black Kite
+        caption: Black Kite overlooking the ground.
+      - path: /images/event_images/2026-09-12-campus-bird-walk/large-billed-crow.webp
+        alt: Large-billed Crow
+        caption: A Large-billed Crow sits on a Gulmohar tree.
+
+  - id: 5
+    images:
+      - path: /images/event_images/2026-09-12-campus-bird-walk/spotted-owlet-pair.webp
+        alt: Spotted Owlet pair
+        caption: A pair of Spotted Owlets near Main Guest House.

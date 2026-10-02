@@ -9,6 +9,17 @@
 - update *CHANGELOG.md*
 - update version (*jekyll-text-theme.gemspec*, *package.json*, *_includes/scripts/variables.html*)
 
+## Contributor Setup
+
+Activate the repository's custom Git hooks after cloning:
+
+```sh
+git config core.hooksPath .githooks
+```
+
+The pre-commit hook checks staged image sizes and validates generated event
+post, gallery, and image-folder names.
+
 ## Publishing
 
 - run `npm run gem-build` to build gem

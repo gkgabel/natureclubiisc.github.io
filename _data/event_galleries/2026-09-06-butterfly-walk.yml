@@ -1,0 +1,26 @@
+sections:
+- id: 1
+  images:
+  - path: /images/event_images/2026-09-06-butterfly-walk/butterfly_walk_sept6_26.webp
+    alt: Butterfly Walk Sept6 26
+    caption: Participants gather at the end of Walk
+- id: 2
+  images:
+    - path: /images/event_images/2026-09-06-butterfly-walk/blue_mormon.webp
+      alt: Blue Mormon
+      caption: Blue Mormon
+    - path: /images/event_images/2026-09-06-butterfly-walk/common_crow.webp
+      alt: Common Crow
+      caption: Common Crow
+    - path: /images/event_images/2026-09-06-butterfly-walk/common_fivering.webp
+      alt: Common Fivering
+      caption: Common Fivering
+    - path: /images/event_images/2026-09-06-butterfly-walk/grass_demon.webp
+      alt: Grass Demon
+      caption: 'Grass Demon'
+    - path: /images/event_images/2026-09-06-butterfly-walk/great_eggfly.webp
+      alt: Great Eggfly
+      caption: 'Great Eggfly'
+    - path: /images/event_images/2026-09-06-butterfly-walk/indian_wanderer.webp
+      alt: Indian Wanderer
+      caption: 'Indian Wanderer'

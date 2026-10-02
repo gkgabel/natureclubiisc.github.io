@@ -1,0 +1,117 @@
+<!-- AI-generated: single event image figure with optional text wrapping, section serial ID lookup, and automated YAML metadata lookup -->
+{% assign gallery_slug = include.gallery | default: page.event_gallery %}
+{% assign gallery_data = site.data.event_galleries[gallery_slug] %}
+{% assign target_id = include.section | default: include.id %}
+{% assign img_filename = include.image %}
+{% if target_id == nil and img_filename %}
+  {% assign check_str = img_filename | append: "" %}
+  {% if check_str.size < 4 %}
+    {% assign target_id = img_filename %}
+  {% endif %}
+{% endif %}
+
+{% assign except_raw = include.except | default: include.except_section | default: include.except_sections | default: include.exclude | default: include.exclude_section | default: include.exclude_sections | append: "" %}
+{% assign except_str = "," %}
+{% if except_raw != "" %}
+  {% if except_raw contains "," %}
+    {% assign raw_parts = except_raw | split: "," %}
+  {% else %}
+    {% assign raw_parts = except_raw | split: " " %}
+  {% endif %}
+  {% for part in raw_parts %}
+    {% assign p_trimmed = part | strip %}
+    {% if p_trimmed != "" %}
+      {% assign except_str = except_str | append: p_trimmed | append: "," %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% assign img_alt = include.alt %}
+{% assign img_caption = include.caption %}
+{% assign img_path = nil %}
+
+{% if target_id == nil and img_filename == nil %}
+{% include event-gallery.html size=include.size gallery=gallery_slug cols=include.cols hide_title=include.hide_title hide_intro=include.hide_intro except=include.except except_section=include.except_section %}
+{% assign rendered_multi = true %}
+{% endif %}
+
+{% if target_id and gallery_data.sections %}
+  {% assign target_id_str = target_id | append: "" %}
+  {% assign check_target = "," | append: target_id_str | append: "," %}
+  {% if except_str contains check_target %}
+    {% assign rendered_multi = true %}
+  {% else %}
+  {% for section in gallery_data.sections %}
+    {% assign s_id = section.id | append: "" %}
+    {% assign s_title = section.title | append: "" %}
+    {% assign check_sec_id = "," | append: s_id | append: "," %}
+    {% assign check_sec_title = "," | append: s_title | append: "," %}
+    {% if except_str contains check_sec_id or except_str contains check_sec_title %}
+      {% if s_id == target_id_str or s_title == target_id_str %}
+        {% assign rendered_multi = true %}
+        {% break %}
+      {% endif %}
+    {% endif %}
+    {% if s_id == target_id_str or s_title == target_id_str %}
+      {% if section.images.size > 1 %}
+{% include event-gallery.html section=target_id size=include.size gallery=gallery_slug cols=include.cols hide_title=include.hide_title except=include.except except_section=include.except_section %}
+        {% assign rendered_multi = true %}
+        {% break %}
+      {% else %}
+        {% for item in section.images %}
+          {% assign img_path = item.path %}
+          {% unless img_alt %}{% assign img_alt = item.alt %}{% endunless %}
+          {% unless img_caption %}{% assign img_caption = item.caption %}{% endunless %}
+          {% break %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% endif %}
+
+{% if img_path == nil and img_filename %}
+  {% if img_filename contains "/" %}
+    {% assign img_path = img_filename %}
+  {% else %}
+    {% assign img_path = "/images/event_images/" | append: gallery_slug | append: "/" | append: img_filename %}
+  {% endif %}
+  {% if gallery_data and img_alt == nil or img_caption == nil %}
+    {% for item in gallery_data.images %}
+      {% if item.path == img_path or item.path contains img_filename %}
+        {% unless img_alt %}{% assign img_alt = item.alt %}{% endunless %}
+        {% unless img_caption %}{% assign img_caption = item.caption %}{% endunless %}
+      {% endif %}
+    {% endfor %}
+    {% if gallery_data.sections %}
+      {% for section in gallery_data.sections %}
+        {% for item in section.images %}
+          {% if item.path == img_path or item.path contains img_filename %}
+            {% unless img_alt %}{% assign img_alt = item.alt %}{% endunless %}
+            {% unless img_caption %}{% assign img_caption = item.caption %}{% endunless %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{% unless rendered_multi %}
+{% assign size_class = "" %}
+{% if include.size == "small" or include.size == "sm" %}
+  {% assign size_class = "event-figure--size-small" %}
+{% elsif include.size == "medium" or include.size == "md" %}
+  {% assign size_class = "event-figure--size-medium" %}
+{% elsif include.size == "large" or include.size == "lg" %}
+  {% assign size_class = "event-figure--size-large" %}
+{% elsif include.size == "full" %}
+  {% assign size_class = "event-figure--size-full" %}
+{% elsif include.size == "original" or include.size == "auto" %}
+  {% assign size_class = "event-figure--size-original" %}
+{% endif %}
+
+<figure class="event-figure {{ size_class }}">
+<img src="{{ img_path | relative_url }}" alt="{{ img_alt | default: include.image | default: target_id }}" loading="lazy" class="event-figure__image">
+{% if img_caption %}<figcaption>{{ img_caption }}</figcaption>{% endif %}
+</figure>
+{% endunless %}

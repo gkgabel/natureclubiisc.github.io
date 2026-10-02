@@ -1,0 +1,168 @@
+<!-- AI-generated: responsive gallery renderer with polaroid styling and section support -->
+{% assign gallery_slug = include.gallery | default: page.event_gallery %}
+{% assign gallery = site.data.event_galleries[gallery_slug] %}
+{% if gallery %}
+{% assign except_raw = include.except | default: include.except_section | default: include.except_sections | default: include.exclude | default: include.exclude_section | default: include.exclude_sections | append: "" %}
+{% assign except_str = "," %}
+{% if except_raw != "" %}
+{% if except_raw contains "," %}
+{% assign raw_parts = except_raw | split: "," %}
+{% else %}
+{% assign raw_parts = except_raw | split: " " %}
+{% endif %}
+{% for part in raw_parts %}
+{% assign p_trimmed = part | strip %}
+{% if p_trimmed != "" %}
+{% assign except_str = except_str | append: p_trimmed | append: "," %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% assign fig_size = "" %}
+{% assign gallery_size = "" %}
+{% if include.size == "small" or include.size == "sm" %}
+{% assign fig_size = "event-figure--size-small" %}
+{% assign gallery_size = "event-gallery--size-small" %}
+{% elsif include.size == "medium" or include.size == "md" %}
+{% assign fig_size = "event-figure--size-medium" %}
+{% assign gallery_size = "event-gallery--size-medium" %}
+{% elsif include.size == "large" or include.size == "lg" %}
+{% assign fig_size = "event-figure--size-large" %}
+{% assign gallery_size = "event-gallery--size-large" %}
+{% elsif include.size == "full" %}
+{% assign fig_size = "event-figure--size-full" %}
+{% assign gallery_size = "event-gallery--size-full" %}
+{% elsif include.size == "original" or include.size == "auto" %}
+{% assign fig_size = "event-figure--size-original" %}
+{% assign gallery_size = "event-gallery--size-original" %}
+{% endif %}
+{% if include.unsectioned == true or include.section == "unsectioned" %}
+{% if gallery.images.size > 0 %}
+{% assign unsec_cols = "event-gallery--cols-auto" %}
+{% if include.cols %}{% assign unsec_cols = "event-gallery--cols-" | append: include.cols %}{% endif %}
+<div class="event-gallery {{ unsec_cols }} {{ gallery_size }}">
+{% for image in gallery.images %}
+<figure class="event-gallery__figure">
+<img src="{{ image.path | relative_url }}" alt="{{ image.alt }}" loading="lazy" class="event-gallery__image">
+{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}
+</figure>
+{% endfor %}
+</div>
+{% endif %}
+{% elsif include.section and include.section != "all" %}
+{% assign target_sec = include.section | append: "" %}
+{% for section in gallery.sections %}
+{% assign sec_title = section.title | append: "" %}
+{% assign sec_id = section.id | append: "" %}
+{% assign check_id = "," | append: sec_id | append: "," %}
+{% assign check_title = "," | append: sec_title | append: "," %}
+{% if except_str contains check_id or except_str contains check_title %}{% continue %}{% endif %}
+{% if sec_title == target_sec or sec_id == target_sec %}
+{% if section.title and include.hide_title != true %}<h3>{{ section.title }}</h3>{% endif %}
+{% if section.images.size == 1 %}
+{% assign single_image = section.images.first %}
+<figure class="event-figure {{ fig_size }}">
+<img src="{{ single_image.path | relative_url }}" alt="{{ single_image.alt }}" loading="lazy" class="event-figure__image">
+{% if single_image.caption %}<figcaption>{{ single_image.caption }}</figcaption>{% endif %}
+</figure>
+{% else %}
+{% assign cols_class = "event-gallery--cols-3" %}
+{% if include.cols %}
+{% assign cols_class = "event-gallery--cols-" | append: include.cols %}
+{% elsif section.images.size == 2 %}
+{% assign cols_class = "event-gallery--cols-2" %}
+{% elsif section.images.size == 3 %}
+{% assign cols_class = "event-gallery--cols-3" %}
+{% elsif section.images.size == 4 %}
+{% assign cols_class = "event-gallery--cols-4" %}
+{% elsif section.images.size > 4 %}
+{% assign cols_class = "event-gallery--cols-auto" %}
+{% endif %}
+<div class="event-gallery {{ cols_class }} {{ gallery_size }}">
+{% for image in section.images %}
+<figure class="event-gallery__figure">
+<img src="{{ image.path | relative_url }}" alt="{{ image.alt }}" loading="lazy" class="event-gallery__image">
+{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}
+</figure>
+{% endfor %}
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% else %}
+{% if gallery.title and include.hide_title != true %}<h3>{{ gallery.title }}</h3>{% endif %}
+{% if gallery.intro and include.hide_intro != true %}<p>{{ gallery.intro }}</p>{% endif %}
+
+{% if gallery.sections %}
+{% assign has_titled_sections = false %}
+{% for section in gallery.sections %}
+{% assign s_id = section.id | append: "" %}
+{% assign s_title = section.title | append: "" %}
+{% assign check_id = "," | append: s_id | append: "," %}
+{% assign check_title = "," | append: s_title | append: "," %}
+{% if except_str contains check_id or except_str contains check_title %}{% continue %}{% endif %}
+{% if section.title %}{% assign has_titled_sections = true %}{% endif %}
+{% endfor %}
+
+{% if has_titled_sections %}
+{% for section in gallery.sections %}
+{% assign s_id = section.id | append: "" %}
+{% assign s_title = section.title | append: "" %}
+{% assign check_id = "," | append: s_id | append: "," %}
+{% assign check_title = "," | append: s_title | append: "," %}
+{% if except_str contains check_id or except_str contains check_title %}{% continue %}{% endif %}
+{% if section.title %}<h3>{{ section.title }}</h3>{% endif %}
+{% assign cols_class = "event-gallery--cols-auto" %}
+{% if include.cols %}
+{% assign cols_class = "event-gallery--cols-" | append: include.cols %}
+{% elsif section.images.size == 2 %}
+{% assign cols_class = "event-gallery--cols-2" %}
+{% elsif section.images.size == 3 %}
+{% assign cols_class = "event-gallery--cols-3" %}
+{% elsif section.images.size == 4 %}
+{% assign cols_class = "event-gallery--cols-4" %}
+{% endif %}
+<div class="event-gallery {{ cols_class }} {{ gallery_size }}">
+{% for image in section.images %}
+<figure class="event-gallery__figure">
+<img src="{{ image.path | relative_url }}" alt="{{ image.alt }}" loading="lazy" class="event-gallery__image">
+{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}
+</figure>
+{% endfor %}
+</div>
+{% endfor %}
+{% else %}
+{% assign full_cols = "event-gallery--cols-auto" %}
+{% if include.cols %}{% assign full_cols = "event-gallery--cols-" | append: include.cols %}{% endif %}
+<div class="event-gallery {{ full_cols }} {{ gallery_size }}">
+{% for section in gallery.sections %}
+{% assign s_id = section.id | append: "" %}
+{% assign s_title = section.title | append: "" %}
+{% assign check_id = "," | append: s_id | append: "," %}
+{% assign check_title = "," | append: s_title | append: "," %}
+{% if except_str contains check_id or except_str contains check_title %}{% continue %}{% endif %}
+{% for image in section.images %}
+<figure class="event-gallery__figure">
+<img src="{{ image.path | relative_url }}" alt="{{ image.alt }}" loading="lazy" class="event-gallery__image">
+{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}
+</figure>
+{% endfor %}
+{% endfor %}
+</div>
+{% endif %}
+{% endif %}
+{% if gallery.images.size > 0 %}
+{% assign full_cols = "event-gallery--cols-auto" %}
+{% if include.cols %}{% assign full_cols = "event-gallery--cols-" | append: include.cols %}{% endif %}
+<div class="event-gallery {{ full_cols }} {{ gallery_size }}">
+{% for image in gallery.images %}
+<figure class="event-gallery__figure">
+<img src="{{ image.path | relative_url }}" alt="{{ image.alt }}" loading="lazy" class="event-gallery__image">
+{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}
+</figure>
+{% endfor %}
+</div>
+{% endif %}
+{% endif %}
+{% else %}
+<p class="event-gallery__missing">Gallery data not found: {{ gallery_slug }}</p>
+{% endif %}

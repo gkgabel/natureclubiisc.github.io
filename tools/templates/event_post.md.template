@@ -1,0 +1,15 @@
+---
+title: "{{ title }}"
+date: {{ date }}
+{{ tags_line }}
+{{ author_line }}
+show_subscribe: false
+license: false
+event_gallery: {{ slug }}
+---
+
+**Date**: {{ display_date }}
+
+[Write the event details here.]
+
+{% include event-gallery.html %}

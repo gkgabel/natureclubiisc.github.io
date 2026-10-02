@@ -199,6 +199,8 @@ exclude:
   - /node_modules
   - /screenshots
   - /test
+  - /tools
+  - /tools/templates
   - /vendor
 
 defaults:

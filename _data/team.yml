@@ -9,7 +9,7 @@ members:
     position: Convenor
     image: images/team/utsav.jpg
     # AI-generated: crop anchor for the fixed portrait frame.
-    image_position: top
+    image_position: bottom
     github: 
     website: 
     email: utsavbiswas@iisc.ac.in 

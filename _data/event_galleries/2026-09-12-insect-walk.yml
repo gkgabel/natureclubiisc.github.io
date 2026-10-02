@@ -1,0 +1,54 @@
+sections:
+- id: 0
+  images:
+  - path: /images/event_images/2026-09-12-insect-walk/12.jpeg
+    alt: '12'
+    caption: 'Group photo at the end of the walk'
+- id: 1
+  images:
+  - path: /images/event_images/2026-09-12-insect-walk/1.jpeg
+    alt: '1'
+    caption: 'Double Banded Crow'
+- id: 2
+  images:
+  - path: /images/event_images/2026-09-12-insect-walk/10.jpeg
+    alt: '10'
+    caption: 'Great Orange Tip'
+- id: 3
+  images:
+  - path: /images/event_images/2026-09-12-insect-walk/11.jpeg
+    alt: '11'
+    caption: 'Common Baron'
+- id: 4
+  images:
+  - path: /images/event_images/2026-09-12-insect-walk/2.jpeg
+    alt: '2'
+    caption: 'Lemon Emigrant'
+- id: 5
+  images:
+  - path: /images/event_images/2026-09-12-insect-walk/3.jpeg
+    alt: '3'
+    caption: 'Lemon Emigrant'
+- id: 6
+  images:
+  - path: /images/event_images/2026-09-12-insect-walk/5.jpeg
+    alt: '5'
+    caption: 'Indian Wanderer'
+- id: 7
+  images:
+  - path: /images/event_images/2026-09-12-insect-walk/6.jpeg
+    alt: '6'
+    caption: 'Great Orange Tip'
+- id: 8
+  images:
+  - path: /images/event_images/2026-09-12-insect-walk/7.jpeg
+    alt: '7'
+    caption: 'Common Cerulean'
+- id: 9
+  images:
+  - path: /images/event_images/2026-09-12-insect-walk/9.jpeg
+    alt: '9'
+    caption: 'Zebra Blue'
+
+title: Insect Walk
+date: '2026-09-12'

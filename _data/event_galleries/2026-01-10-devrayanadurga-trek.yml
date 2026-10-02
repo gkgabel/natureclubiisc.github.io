@@ -1,0 +1,28 @@
+sections:
+- id: 1
+  images:
+  - path: /images/event_images/2026-01-10-devrayanadurga-trek/dd_trek1.jpeg
+    alt: Dd Trek1
+    caption: Taking a breather on the wide rocky plateau, enjoying the cool breeze
+      and cloudy weather.
+- id: 2
+  images:
+  - path: /images/event_images/2026-01-10-devrayanadurga-trek/dd_trek2.jpeg
+    alt: Dd Trek2
+    caption: Navigating sections of exposed sheet rock, a typical geological feature
+      of the area.
+- id: 3
+  images:
+  - path: /images/event_images/2026-01-10-devrayanadurga-trek/dd_trek3.jpeg
+    alt: Dd Trek3
+    caption: A trail through the characteristic dry scrubland and deciduous forest
+      of the region.
+- id: 4
+  images:
+  - path: /images/event_images/2026-01-10-devrayanadurga-trek/dd_trek4.jpeg
+    alt: Dd Trek4
+    caption: Looking out from the plateau across the surrounding hill ranges
+- id: 5
+  images: []
+title: Devrayanadurga Trek
+date: '2026-01-10'

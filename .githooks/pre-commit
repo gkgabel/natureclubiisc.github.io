@@ -28,3 +28,40 @@ if [ -n "$bloated_files" ]; then
     echo "   Tip: Use PIL or an online compressor, then run 'git add' again."
     exit 1
 fi
+
+# AI-generated: validate generated event posts against image folder and gallery data.
+event_errors=""
+for file in $(git diff --cached --name-only --diff-filter=ACM -- '_posts/*.md'); do
+    post_contents=$(git show ":$file" 2>/dev/null) || continue
+    event_gallery=$(printf '%s\n' "$post_contents" | sed -n 's/^event_gallery:[[:space:]]*//p' | head -n 1 | tr -d '\r"' | tr -d "'")
+    [ -z "$event_gallery" ] && continue
+
+    post_name=${file##*/}
+    post_slug=${post_name%.md}
+    image_dir="images/event_images/$event_gallery"
+    gallery_file="_data/event_galleries/$event_gallery.yml"
+
+    if [ "$event_gallery" != "$post_slug" ]; then
+        event_errors="$event_errors\n$file declares event_gallery '$event_gallery' but must use '$post_slug'."
+    fi
+    case "$event_gallery" in
+        /*|*..*|*/*)
+            event_errors="$event_errors\n$file has an invalid event_gallery value: '$event_gallery'."
+            continue
+            ;;
+    esac
+    if ! git ls-files --cached -- "$image_dir/*" | grep -q .; then
+        event_errors="$event_errors\nMissing staged event image folder: $image_dir"
+    fi
+    if ! git ls-files --cached -- "$gallery_file" | grep -qx "$gallery_file"; then
+        event_errors="$event_errors\nMissing staged gallery data: $gallery_file"
+    fi
+done
+
+if [ -n "$event_errors" ]; then
+    echo ""
+    echo "🛑 Commit rejected! Event post and gallery names do not match."
+    printf '%b\n' "$event_errors"
+    echo "   Generate new event posts with: python3 tools/create_event_post.py create"
+    exit 1
+fi
