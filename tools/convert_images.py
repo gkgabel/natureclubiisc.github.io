@@ -133,7 +133,7 @@ def convert_image(source, destination, max_width, max_height, quality, dry_run, 
 
 
 # AI-generated: iteratively compress image quality and dimensions to meet max_bytes target
-def optimize_image(source, destination, max_width, max_height, quality, max_bytes, dry_run):
+def optimize_image(source, destination, max_width, max_height, quality, max_bytes, dry_run, quality_floor=25):
     dest_ext = destination.suffix.lower()
     if source.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp"}:
         print(f"Skipping size optimization for unsupported format: {source}")
@@ -159,8 +159,8 @@ def optimize_image(source, destination, max_width, max_height, quality, max_byte
         output = encode_image(image, dest_ext, current_quality)
         if output.tell() <= max_bytes:
             break
-        if not is_png and current_quality > 25:
-            current_quality = max(25, current_quality - 5)
+        if not is_png and current_quality > quality_floor:
+            current_quality = max(quality_floor, current_quality - 5)
             continue
         if min(width, height) <= 320:
             print(f"Could not reduce below {max_bytes} bytes: {source} ({output.tell()} bytes)")

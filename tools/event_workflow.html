@@ -1,0 +1,154 @@
+<!-- AI-generated: local event image upload, review, and publishing interface. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nature Club Event Workflow</title>
+  <style>
+    :root { --ink: #17231e; --muted: #64736a; --paper: #f5f1e8; --panel: #fffdf8; --leaf: #28664b; --line: #d8d9ca; --warn: #9b4d18; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: radial-gradient(circle at 85% 8%, #d6e4c8 0 12%, transparent 32%), var(--paper); font: 16px/1.45 Georgia, serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    header { display: flex; justify-content: space-between; gap: 1rem; align-items: end; margin-bottom: 1.5rem; }
+    h1, h2, h3 { font-family: "Trebuchet MS", sans-serif; letter-spacing: 0; }
+    h1 { max-width: 620px; margin: 0; font-size: clamp(2rem, 5vw, 4.2rem); line-height: .95; }
+    h2 { margin-top: 0; }
+    .eyebrow { color: var(--leaf); font: 700 .75rem/1.2 "Trebuchet MS", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    .layout { display: grid; grid-template-columns: minmax(300px, .8fr) minmax(0, 1.5fr); gap: 1rem; }
+    section { background: color-mix(in srgb, var(--panel) 92%, transparent); border: 1px solid var(--line); padding: 1.15rem; box-shadow: 8px 8px 0 #dfe5d5; }
+    label { display: block; margin: .7rem 0; font-family: "Trebuchet MS", sans-serif; font-size: .9rem; font-weight: 700; }
+    input, textarea, button { font: inherit; }
+    input[type=text], input[type=date], textarea { width: 100%; border: 1px solid #b9c0b3; border-radius: 3px; padding: .6rem; background: #fff; color: var(--ink); }
+    textarea { min-height: 3.5rem; resize: vertical; }
+    input[type=file] { width: 100%; padding: 1rem; border: 2px dashed #9fb79f; background: #f4f8ee; }
+    .checks { display: grid; gap: .5rem; margin: 1rem 0; padding: .8rem; background: #eef4e8; }
+    .checks label { margin: 0; font-weight: 400; }
+    .checks input { accent-color: var(--leaf); margin-right: .5rem; }
+    .hint, .status { color: var(--muted); font-size: .9rem; }
+    .warning { color: var(--warn); font-weight: 700; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    button { border: 0; border-radius: 3px; padding: .7rem 1rem; cursor: pointer; background: var(--leaf); color: white; font-weight: 700; }
+    button.secondary { background: #dfe9d9; color: var(--ink); }
+    button:disabled { cursor: wait; opacity: .55; }
+    #contact-sheet { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .8rem; }
+    .photo { position: relative; border: 1px solid var(--line); padding: .55rem; background: white; }
+    .photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; margin-bottom: .5rem; background: #e9eee6; }
+    .photo .select { position: absolute; top: .8rem; left: .8rem; width: 1.2rem; height: 1.2rem; accent-color: var(--leaf); }
+    .photo small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); }
+    .photo-fields { display: grid; gap: .4rem; }
+    .photo-fields input, .photo-fields textarea { font-size: .85rem; padding: .4rem; }
+    .photo-fields textarea { min-height: 2.6rem; }
+    .empty { padding: 3rem 1rem; border: 1px dashed var(--line); text-align: center; color: var(--muted); }
+    #preview { margin-top: 1rem; white-space: pre-wrap; }
+    @media (max-width: 760px) { header, .layout { display: block; } header { margin-bottom: 2rem; } section { margin-bottom: 1rem; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div><div class="eyebrow">Nature Club IISc</div><h1>Build an event gallery without the file shuffle.</h1></div>
+    <div class="hint">Local publishing tool</div>
+  </header>
+  <div class="layout">
+    <section>
+      <h2>Event details</h2>
+      <form id="event-form">
+        <label>Title<input id="title" type="text" required placeholder="Campus Bird Walk"></label>
+        <label>Date<input id="date" type="date" required></label>
+        <label>Tags<input id="tags" type="text" placeholder="birds nature-walk"></label>
+        <label>Author<input id="author" type="text" placeholder="Optional"></label>
+        <label>Images<input id="files" type="file" accept="image/jpeg,image/png,image/webp,image/tiff,image/gif" multiple></label>
+        <div class="checks">
+          <label><input id="convert" type="checkbox" checked> Convert selected images to WebP</label>
+          <label><input id="enforce" type="checkbox" checked> Enforce maximum file size</label>
+          <div id="config-hint" class="hint">Loading repository defaults...</div>
+        </div>
+        <div class="toolbar">
+          <button id="preview-button" type="button" class="secondary">Preview output</button>
+          <button id="finalize-button" type="button">Finalize event</button>
+        </div>
+        <div id="status" class="status" aria-live="polite"></div>
+      </form>
+    </section>
+    <section>
+      <div class="toolbar"><div><h2>Contact sheet</h2><div class="hint">Select images, then edit their filename, alt text, and caption.</div></div><div id="count" class="eyebrow">0 selected</div></div>
+      <div id="contact-sheet" class="empty">Choose image files to begin.</div>
+      <div id="preview" class="hint"></div>
+    </section>
+  </div>
+</main>
+<script>
+  const state = { files: [], config: {}, draftKey: "nature-club-event-workflow" };
+  const $ = (id) => document.getElementById(id);
+  const saved = JSON.parse(localStorage.getItem(state.draftKey) || "null");
+  if (saved) {
+    ["title", "date", "tags", "author"].forEach((id) => { if (saved[id]) $(id).value = saved[id]; });
+  }
+  fetch("/api/config").then((response) => response.json()).then((config) => {
+    state.config = config;
+    $("convert").checked = config.convert_to_webp;
+    $("enforce").checked = config.enforce_max_bytes;
+    $("config-hint").textContent = `Defaults: ${config.max_bytes.toLocaleString()} bytes, ${config.preset} preset. Preview will report every file over the active limit.`;
+  });
+  $("files").addEventListener("change", (event) => {
+    const savedImages = saved && saved.images ? saved.images : [];
+    state.files = [...event.target.files].map((file) => {
+      const savedImage = savedImages.find((item) => item.name === file.name) || {};
+      return { file, selected: savedImage.selected !== false, name: savedImage.name || file.name, alt: savedImage.alt || file.name.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " "), caption: savedImage.caption || "", url: URL.createObjectURL(file) };
+    });
+    saveDraft();
+    render();
+  });
+  function render() {
+    const sheet = $("contact-sheet");
+    const selected = state.files.filter((item) => item.selected);
+    $("count").textContent = `${selected.length} selected`;
+    if (!state.files.length) { sheet.className = "empty"; sheet.textContent = "Choose image files to begin."; return; }
+    sheet.className = "";
+    sheet.innerHTML = state.files.map((item, index) => `<article class="photo"><input class="select" type="checkbox" data-index="${index}" ${item.selected ? "checked" : ""} aria-label="Select ${escapeHtml(item.name)}"><img src="${item.url}" alt=""><small>${escapeHtml(item.file.name)} (${Math.ceil(item.file.size / 1024)} KB)</small><div class="photo-fields"><input data-field="name" data-index="${index}" value="${escapeAttr(item.name)}" aria-label="Output filename"><input data-field="alt" data-index="${index}" value="${escapeAttr(item.alt)}" placeholder="Alt text" aria-label="Alt text"><textarea data-field="caption" data-index="${index}" placeholder="Caption" aria-label="Caption">${escapeHtml(item.caption)}</textarea><div><button type="button" class="secondary move" data-move="up" data-index="${index}" ${index === 0 ? "disabled" : ""}>Move up</button> <button type="button" class="secondary move" data-move="down" data-index="${index}" ${index === state.files.length - 1 ? "disabled" : ""}>Move down</button></div></div></article>`).join("");
+    sheet.querySelectorAll(".select").forEach((control) => control.addEventListener("change", (event) => { state.files[event.target.dataset.index].selected = event.target.checked; saveDraft(); render(); }));
+    sheet.querySelectorAll(".move").forEach((control) => control.addEventListener("click", (event) => moveImage(Number(event.target.dataset.index), event.target.dataset.move)));
+    sheet.querySelectorAll("[data-field]").forEach((control) => control.addEventListener("input", (event) => { state.files[event.target.dataset.index][event.target.dataset.field] = event.target.value; saveDraft(); }));
+  }
+  function moveImage(index, direction) {
+    const target = direction === "up" ? index - 1 : index + 1;
+    if (target < 0 || target >= state.files.length) return;
+    [state.files[index], state.files[target]] = [state.files[target], state.files[index]];
+    saveDraft();
+    render();
+  }
+  function escapeHtml(value) { return String(value).replace(/[&<>]/g, (character) => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[character])); }
+  function escapeAttr(value) { return escapeHtml(value).replace(/"/g, "&quot;"); }
+  function saveDraft() {
+    localStorage.setItem(state.draftKey, JSON.stringify({ title: $("title").value, date: $("date").value, tags: $("tags").value, author: $("author").value, images: state.files.map((item) => ({ name: item.name, alt: item.alt, caption: item.caption, selected: item.selected })) }));
+  }
+  ["title", "date", "tags", "author", "convert", "enforce"].forEach((id) => $(id).addEventListener("change", saveDraft));
+  function manifest() {
+    return { title: $("title").value, date: $("date").value, tags: $("tags").value.split(/\s+/).filter(Boolean), author: $("author").value, options: { convert_to_webp: $("convert").checked, enforce_max_bytes: $("enforce").checked }, images: state.files.filter((item) => item.selected).map((item) => ({ name: item.name, alt: item.alt, caption: item.caption })) };
+  }
+  async function submit(path) {
+    const data = manifest();
+    if (!data.title || !data.date || !state.files.some((item) => item.selected)) { $("status").textContent = "Add a title, date, and at least one selected image."; return; }
+    const form = new FormData();
+    form.append("manifest", JSON.stringify(data));
+    state.files.filter((item) => item.selected).forEach((item) => form.append("images", item.file, item.file.name));
+    $("preview-button").disabled = true; $("finalize-button").disabled = true; $("status").textContent = path.endsWith("preview") ? "Preparing preview..." : "Finalizing...";
+    try {
+      const response = await fetch(path, { method: "POST", body: form });
+      const payload = await response.json();
+      if (!payload.ok) throw new Error(payload.error);
+      const result = payload.result;
+      const tooLarge = state.config.max_bytes && result.files.filter((file) => file.bytes > state.config.max_bytes);
+      $("preview").textContent = `${result.slug}\n${result.files.map((file) => `${file.filename}: ${file.bytes.toLocaleString()} bytes`).join("\n")}${result.empty_alt.length ? `\nWarning: empty alt text: ${result.empty_alt.join(", ")}` : ""}${tooLarge.length ? `\nSize failures: ${tooLarge.map((file) => file.filename).join(", ")}` : ""}`;
+      $("status").textContent = path.endsWith("preview") ? "Preview ready. Check the output above." : "Event finalized successfully.";
+      if (!path.endsWith("preview")) localStorage.removeItem(state.draftKey);
+    } catch (error) { $("status").textContent = `Could not complete: ${error.message}`; }
+    finally { $("preview-button").disabled = false; $("finalize-button").disabled = false; }
+  }
+  $("preview-button").addEventListener("click", () => submit("/api/preview"));
+  $("finalize-button").addEventListener("click", () => { if (confirm("Finalize this new event in the repository?")) submit("/api/finalize"); });
+  render();
+</script>
+</body>
+</html>

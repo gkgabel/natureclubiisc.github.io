@@ -1,7 +1,8 @@
 #!/bin/sh
 
-# Maximum allowed file size in bytes (300 KB = 307200 bytes)
-MAX_SIZE=307200
+# Maximum allowed file size in bytes (configured default: 300 KB = 307200 bytes)
+MAX_SIZE=$(sed -n 's/^max_bytes=//p' tools/image_workflow.conf 2>/dev/null | head -n 1)
+MAX_SIZE=${MAX_SIZE:-307200}
 
 # Find any staged image files that exceed the size limit
 bloated_files=""

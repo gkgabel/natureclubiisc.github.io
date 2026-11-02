@@ -229,9 +229,9 @@
 }
 .team-bio {
   margin: 0;
-  font-family: 'Caveat', cursive;
+  font-family: map-get($base, font-family);
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: map-get($base, line-height);
 }
 .team-position {
   margin-bottom: 0.5rem;

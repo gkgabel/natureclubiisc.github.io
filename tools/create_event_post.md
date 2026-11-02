@@ -28,6 +28,27 @@ _data/event_galleries/2026-09-12-campus-bird-walk.yml
 
 It refuses to overwrite an existing post, image folder, or gallery file. Use `--help` to see all options.
 
+## Browser workflow
+
+The repository also includes a local workflow that connects image processing
+and event generation:
+
+```sh
+python3 tools/event_workflow_server.py
+```
+
+Open `http://127.0.0.1:8765/`. Upload images, uncheck images that should not
+be published, edit filenames, alt text, and captions, then use **Preview
+output** before **Finalize event**. Use the image controls to change order.
+Conversion to WebP and the maximum file
+size check are enabled by default and can be changed for one publish. Defaults
+are stored in `tools/image_workflow.conf`.
+
+Preview runs the same Python publishing functions as the CLI and reports each
+output size. Finalize refuses duplicate image content, normalizes filenames,
+refuses existing event slugs, and stages all output before writing it. Empty
+alt text produces a warning but does not block publishing.
+
 ## Add images and captions
 
 1. Copy event images into the generated `images/event_images/<event-slug>/` folder.

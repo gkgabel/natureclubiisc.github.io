@@ -11,6 +11,7 @@ from PIL import Image
 
 from tools.convert_images import convert_image, optimize_image, output_path
 from tools.create_event_post import create_event, event_slug, post_content, refresh_event, slugify
+from tools.event_publish import PublishError, load_workflow_config, publish_event, safe_destination
 
 
 class EventToolTests(unittest.TestCase):
@@ -231,6 +232,81 @@ class EventToolTests(unittest.TestCase):
         self.assertEqual(PRESETS["small"]["max_width"], 1000)
         self.assertEqual(PRESETS["standard"]["max_width"], 1600)
         self.assertEqual(PRESETS["hero"]["max_width"], 2400)
+
+    def test_publish_event_generates_ordered_metadata_and_safe_names(self):
+        first = self.root / "Bird Photo.JPG"
+        second = self.root / "Bird Photo 2.JPG"
+        Image.new("RGB", (400, 300), "green").save(first)
+        Image.new("RGB", (400, 300), "blue").save(second)
+
+        result = publish_event(
+            self.root,
+            "Campus Bird Walk",
+            "2026-09-12",
+            ["birds"],
+            "Author",
+            [
+                {"source": str(second), "name": "Spotted Owlet.JPG", "alt": "Owlet", "caption": "Second"},
+                {"source": str(first), "name": "Spotted Owlet.JPG", "alt": "Bird", "caption": "First"},
+            ],
+        )
+
+        self.assertEqual([item["filename"] for item in result["files"]], ["spotted-owlet.webp", "spotted-owlet-2.webp"])
+        gallery = yaml.safe_load((self.root / result["gallery"]).read_text())
+        self.assertEqual(gallery["sections"][0]["images"][0]["alt"], "Owlet")
+        self.assertEqual(gallery["sections"][1]["images"][0]["caption"], "First")
+        self.assertEqual(result["empty_alt"], [])
+
+    def test_publish_event_rejects_duplicate_content_without_writing(self):
+        first = self.root / "first.jpg"
+        duplicate = self.root / "duplicate.jpg"
+        Image.new("RGB", (400, 300), "green").save(first)
+        shutil.copy2(first, duplicate)
+
+        with self.assertRaisesRegex(PublishError, "Duplicate image content"):
+            publish_event(
+                self.root,
+                "Duplicate Walk",
+                "2026-09-12",
+                [],
+                None,
+                [{"source": str(first)}, {"source": str(duplicate)}],
+            )
+        self.assertFalse((self.root / "_posts" / "2026-09-12-duplicate-walk.md").exists())
+
+    def test_publish_event_aborts_without_partial_outputs(self):
+        valid = self.root / "valid.jpg"
+        Image.new("RGB", (400, 300), "green").save(valid)
+
+        with self.assertRaisesRegex(PublishError, "Unsupported or missing image"):
+            publish_event(
+                self.root,
+                "Atomic Walk",
+                "2026-09-12",
+                [],
+                None,
+                [{"source": str(valid)}, {"source": str(self.root / "missing.gif")}],
+            )
+        self.assertFalse((self.root / "_posts" / "2026-09-12-atomic-walk.md").exists())
+        self.assertFalse((self.root / "_data" / "event_galleries" / "2026-09-12-atomic-walk.yml").exists())
+        self.assertFalse((self.root / "images" / "event_images" / "2026-09-12-atomic-walk").exists())
+
+    def test_safe_destination_rejects_traversal(self):
+        with self.assertRaises(PublishError):
+            safe_destination(self.root, "../outside.txt")
+        with self.assertRaises(PublishError):
+            safe_destination(self.root, "/tmp/outside.txt")
+
+    def test_workflow_preset_controls_unspecified_dimensions(self):
+        config_path = self.root / "tools" / "image_workflow.conf"
+        config_path.write_text("preset=small\nmax_bytes=12345\n")
+
+        config = load_workflow_config(self.root)
+
+        self.assertEqual(config["max_width"], 1000)
+        self.assertEqual(config["max_height"], 1000)
+        self.assertEqual(config["quality"], 80)
+        self.assertEqual(config["max_bytes"], 12345)
 
 
 if __name__ == "__main__":

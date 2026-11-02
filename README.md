@@ -26,6 +26,23 @@ bundle exec jekyll serve
 python3 -m unittest tools/test_event_tools.py -v
 ```
 
+### Local Event Image Workflow
+
+For a guided upload, contact sheet, selection, caption, alt-text, conversion,
+and event generation workflow, run this from the repository root:
+
+```sh
+python3 tools/event_workflow_server.py
+```
+
+Open `http://127.0.0.1:8765/` in a browser. The server binds to localhost
+only. Select and reorder images, edit their metadata, and preview the result
+without writing event files;
+Finalize stages the images, post, and gallery data before committing them.
+Existing event slugs are never overwritten. The defaults are in
+`tools/image_workflow.conf`; conversion and size enforcement are enabled by
+default. The pre-commit hook reads the same configured byte limit.
+
 ---
 
 ## Event Posts and Gallery Workflow
